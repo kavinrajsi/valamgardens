@@ -1091,3 +1091,16 @@
   text-transform: uppercase;
   color: var(--color-primary);
 }
+
+/* ---------- Duplicate-CTA suppression ----------
+   MobileCtaBar pins Call and WhatsApp to the bottom of every page below
+   992px, which is exactly where the hero and CTA-band phone buttons stop
+   earning their place. Hiding them there leaves one action per block on
+   mobile; above 992px the bar is gone and the buttons are the only way to
+   call, so they come back. */
+
+@media (max-width: 991.98px) {
+  .hide-with-bar {
+    display: none !important;
+  }
+}

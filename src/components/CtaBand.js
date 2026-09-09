@@ -20,7 +20,7 @@ export default function CtaBand({
             <Button href="/contact" variant="secondary" size="lg">
               Get a proposal
             </Button>
-            <Button href={site.phoneHref} variant="outline" size="lg">
+            <Button href={site.phoneHref} variant="outline" size="lg" className="hide-with-bar">
               <PhoneIcon className="btn__icon" />
               Call {site.phoneDisplay}
             </Button>

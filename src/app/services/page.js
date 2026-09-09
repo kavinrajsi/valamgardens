@@ -69,7 +69,7 @@ export default function ServicesPage() {
                 <Button href="/contact" size="lg">
                   Get a proposal
                 </Button>
-                <Button href={site.phoneHref} variant="outline" size="lg">
+                <Button href={site.phoneHref} variant="outline" size="lg" className="hide-with-bar">
                   Call {site.phoneDisplay}
                 </Button>
               </div>

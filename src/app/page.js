@@ -61,14 +61,17 @@ export default function HomePage() {
                 <Button href="/contact" size="lg">
                   Get a proposal
                 </Button>
-                <Button href={site.phoneHref} variant="outline" size="lg">
+                <Button href={site.phoneHref} variant="outline" size="lg" className="hide-with-bar">
                   <PhoneIcon className="btn__icon" />
                   {site.phoneDisplay}
                 </Button>
               </div>
               <p className="hero__note">
-                Monthly, quarterly or annual plans. Or{" "}
-                <a href={site.whatsappHref} target="_blank" rel="noopener noreferrer">message us on WhatsApp</a>.
+                Monthly, quarterly or annual plans.
+                <span className="hide-with-bar">
+                  {" "}Or{" "}
+                  <a href={site.whatsappHref} target="_blank" rel="noopener noreferrer">message us on WhatsApp</a>.
+                </span>
               </p>
             </div>
             <div className="col-12 col-lg-6">

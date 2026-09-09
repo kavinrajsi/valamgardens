@@ -86,7 +86,7 @@ export default async function ServicePage({ params }) {
                 <Button href="#enquire" size="lg">
                   Get a quote for {service.name.toLowerCase()}
                 </Button>
-                <Button href={site.phoneHref} variant="outline" size="lg">
+                <Button href={site.phoneHref} variant="outline" size="lg" className="hide-with-bar">
                   <PhoneIcon className="btn__icon" />
                   {site.phoneDisplay}
                 </Button>
