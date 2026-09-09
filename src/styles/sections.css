@@ -15,7 +15,6 @@
 .hero__title {
   font-family: var(--font-heading);
   font-weight: 900;
-  font-style: italic;
   font-size: var(--text-display);
   line-height: 0.98;
   letter-spacing: -0.015em;
@@ -126,7 +125,6 @@
   padding-left: 0.06em;
   margin-left: -0.06em;
   font-weight: 900;
-  font-style: italic;
   font-size: var(--text-display);
   line-height: 0.98;
   letter-spacing: -0.015em;
@@ -177,7 +175,6 @@
 .cta-band__title {
   font-family: var(--font-heading);
   font-weight: 900;
-  font-style: italic;
   font-size: var(--text-3xl);
   line-height: 1;
   color: var(--color-white);
@@ -222,7 +219,6 @@
 .service-hero__line {
   display: block;
   font-weight: 900;
-  font-style: italic;
   color: var(--color-primary);
 }
 .service-meta {
@@ -338,7 +334,6 @@
 .not-found__code {
   font-family: var(--font-heading);
   font-weight: 900;
-  font-style: italic;
   font-size: var(--text-display);
   color: var(--color-primary);
   line-height: 1;

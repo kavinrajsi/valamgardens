@@ -70,8 +70,11 @@ a:hover {
 strong {
   font-weight: 600;
 }
+/* No italics anywhere on this site, including the browser default for <em>.
+   Nothing renders <em> today; if that changes it will need another way to
+   read as emphasis. */
 em {
-  font-style: italic;
+  font-style: normal;
 }
 
 img,
