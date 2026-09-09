@@ -39,7 +39,6 @@ export async function generateMetadata({ params }) {
     title: `${service.name} in Chennai`,
     description: `${service.summary} ${service.duration}.`,
     path: `/services/${service.slug}`,
-    image: service.image,
     keywords: [`${service.name.toLowerCase()} Chennai`, `${service.name.toLowerCase()} cost Chennai`],
   });
 }

@@ -1,8 +1,7 @@
 import { site } from "./site";
 
-export function buildMetadata({ title, description, path = "/", image, type = "website", keywords = [] }) {
+export function buildMetadata({ title, description, path = "/", type = "website", keywords = [] }) {
   const fullTitle = path === "/" ? `${site.name} | ${site.tagline}` : `${title} | ${site.name}`;
-  const ogImage = image || "/opengraph-image";
   return {
     title: { absolute: fullTitle },
     description,
@@ -23,13 +22,13 @@ export function buildMetadata({ title, description, path = "/", image, type = "w
       title: fullTitle,
       description,
       locale: "en_IN",
-      images: [{ url: ogImage, width: 1200, height: 630, alt: `${title} by ${site.name}` }],
+      images: [{ url: site.ogImage, width: 1200, height: 630, alt: site.name }],
     },
     twitter: {
       card: "summary_large_image",
       title: fullTitle,
       description,
-      images: [ogImage],
+      images: [site.ogImage],
     },
   };
 }

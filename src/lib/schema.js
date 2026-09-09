@@ -12,7 +12,7 @@ export function organizationSchema() {
     legalName: site.legalName,
     url: site.url,
     logo: absoluteUrl("/logo.svg"),
-    image: absoluteUrl("/opengraph-image"),
+    image: site.ogImage,
     description: site.description,
     telephone: site.phone,
     email: site.email,

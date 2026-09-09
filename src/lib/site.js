@@ -3,6 +3,10 @@ export const site = {
   legalName: "Valam Gardens",
   domain: "valamgardens.com",
   url: "https://valamgardens.com",
+  /* Share image for every page. Absolute and on the www host, as specified —
+     scrapers do not all resolve relative URLs, and several cache by URL, so
+     this stays stable rather than being generated per page. */
+  ogImage: "https://www.valamgardens.com/og-image.png",
   tagline: "Office plant rental in Chennai, fully managed",
   description:
     "Valam Gardens rents indoor plants to offices across Chennai on a fully managed plan: installation, weekly maintenance and free replacement, with no capital outlay. We also design and build vertical gardens, landscapes, terrace gardens and bulk gift plants.",
