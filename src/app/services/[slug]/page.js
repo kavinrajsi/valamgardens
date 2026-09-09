@@ -91,24 +91,6 @@ export default async function ServicePage({ params }) {
                   {site.phoneDisplay}
                 </Button>
               </div>
-              <dl className="service-meta">
-                <div className="service-meta__item">
-                  <dt>
-                    <strong>Timeline</strong>
-                  </dt>
-                  <dd>
-                    <span>{service.duration}</span>
-                  </dd>
-                </div>
-                <div className="service-meta__item">
-                  <dt>
-                    <strong>Service area</strong>
-                  </dt>
-                  <dd>
-                    <span>All of Chennai and nearby districts</span>
-                  </dd>
-                </div>
-              </dl>
             </Reveal>
             <Reveal className="col-12 col-lg-5 offset-lg-1 page-hero__media" delay={0.12}>
               <div className="media media--arch media--3x4">
