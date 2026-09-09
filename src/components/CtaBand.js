@@ -17,7 +17,7 @@ export default function CtaBand({
           </h2>
           <p className="cta-band__text">{text}</p>
           <div className="btn-group" style={{ justifyContent: "center" }}>
-            <Button href="/contact" variant="secondary" size="lg">
+            <Button href="/contact" variant="secondary" size="lg" data-enquiry="cta-band">
               Get a proposal
             </Button>
             <Button href={site.phoneHref} variant="outline" size="lg" className="hide-with-bar">

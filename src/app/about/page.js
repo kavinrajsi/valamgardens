@@ -69,7 +69,7 @@ export default function AboutPage() {
                 rented them instead — installed, maintained, replaced.
               </p>
               <div className="btn-group page-hero__actions">
-                <Button href="/contact" size="lg">
+                <Button href="/contact" size="lg" data-enquiry="about-hero">
                   Get a proposal
                 </Button>
                 <Button href="/services" variant="outline" size="lg">

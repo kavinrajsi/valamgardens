@@ -1208,3 +1208,133 @@
     display: none !important;
   }
 }
+
+/* ---------- Enquiry modal ----------
+   Native <dialog>, so it paints in the top layer and escapes ScrollSmoother's
+   transform on #smooth-content. Centred on desktop, bottom sheet on mobile. */
+
+.enquiry {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  max-width: 34rem;
+  width: calc(100% - 2rem);
+  max-height: min(88dvh, 46rem);
+  margin: auto;
+  overflow: visible;
+}
+.enquiry::backdrop {
+  background: rgba(34, 34, 34, 0.55);
+}
+.enquiry__inner {
+  position: relative;
+  max-height: inherit;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 2rem;
+  border-radius: var(--radius);
+  background: var(--color-white);
+}
+.enquiry__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(34, 34, 34, 0.06);
+  color: var(--color-black);
+  cursor: pointer;
+  transition: background-color var(--duration) var(--ease);
+}
+.enquiry__close:hover {
+  background: rgba(34, 34, 34, 0.12);
+}
+.enquiry__close svg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+/* The sheet handle. Desktop has a close button and no drag affordance to
+   suggest, so it only appears at the bottom-sheet width. */
+.enquiry__grabber {
+  display: none;
+}
+.enquiry__title {
+  margin-bottom: 0.5rem;
+  padding-right: 2.5rem;
+  font-size: var(--text-xl);
+}
+.enquiry__lead {
+  margin-bottom: 1.5rem;
+  font-size: var(--text-sm);
+  color: var(--color-ink-70);
+}
+
+@keyframes enquiry-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+}
+@keyframes enquiry-sheet-in {
+  from {
+    transform: translateY(100%);
+  }
+}
+@keyframes enquiry-backdrop-in {
+  from {
+    opacity: 0;
+  }
+}
+
+.enquiry[open] {
+  animation: enquiry-in 240ms var(--ease);
+}
+.enquiry[open]::backdrop {
+  animation: enquiry-backdrop-in 240ms var(--ease);
+}
+
+/* Bottom sheet. `margin: auto auto 0` against the dialog's default inset:0
+   keeps it centred horizontally and pins it to the bottom edge. */
+@media (max-width: 767.98px) {
+  .enquiry {
+    width: 100%;
+    max-width: none;
+    max-height: 92dvh;
+    margin: auto auto 0;
+  }
+  .enquiry__inner {
+    padding: 1.25rem 1.25rem 2rem;
+    border-radius: 1.25rem 1.25rem 0 0;
+  }
+  .enquiry[open] {
+    animation: enquiry-sheet-in 280ms var(--ease);
+  }
+  .enquiry__grabber {
+    display: block;
+    width: 2.25rem;
+    height: 0.25rem;
+    margin: 0 auto 1rem;
+    border-radius: 999px;
+    background: var(--color-line-strong);
+  }
+  .enquiry__close {
+    top: 0.6rem;
+    right: 0.75rem;
+  }
+  .enquiry__title {
+    margin-top: 0.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .enquiry[open],
+  .enquiry[open]::backdrop {
+    animation: none;
+  }
+}

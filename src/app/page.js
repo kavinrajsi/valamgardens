@@ -58,7 +58,7 @@ export default function HomePage() {
                 week, and replace anything that dies — free.
               </p>
               <div className="hero__actions">
-                <Button href="/contact" size="lg">
+                <Button href="/contact" size="lg" data-enquiry="home-hero">
                   Get a proposal
                 </Button>
                 <Button href={site.phoneHref} variant="outline" size="lg" className="hide-with-bar">

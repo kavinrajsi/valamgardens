@@ -20,7 +20,7 @@ export default function Plans() {
             <p className="plan__best-for">{plan.bestFor}</p>
             <Checklist items={plan.includes} />
             <p className="plan__note">{plan.note}</p>
-            <Button href="/contact" variant={plan.featured ? "primary" : "outline"}>
+            <Button href="/contact" variant={plan.featured ? "primary" : "outline"} data-enquiry={`plan:${plan.id}`}>
               Talk to us
             </Button>
           </div>

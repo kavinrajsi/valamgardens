@@ -71,7 +71,7 @@ export default function Header() {
             <a href={site.phoneHref} className="header__phone">
               {site.phoneDisplay}
             </a>
-            <Link href="/contact" className="btn btn--primary header__cta">
+            <Link href="/contact" className="btn btn--primary header__cta" data-enquiry="header">
               Get a proposal
             </Link>
             <button
@@ -124,7 +124,7 @@ export default function Header() {
             ))}
           </ul>
           <div className="header__drawer-actions" style={{ "--i": drawerOrder.count }}>
-            <Link href="/contact" className="btn btn--primary btn--block" onClick={() => setOpen(false)}>
+            <Link href="/contact" className="btn btn--primary btn--block" data-enquiry="drawer" onClick={() => setOpen(false)}>
               Get a proposal
             </Link>
             <a href={site.phoneHref} className="btn btn--outline btn--block">

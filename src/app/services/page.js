@@ -66,7 +66,7 @@ export default function ServicesPage() {
                 {" "}{site.name} staff, not subcontracted.
               </p>
               <div className="btn-group page-hero__actions">
-                <Button href="/contact" size="lg">
+                <Button href="/contact" size="lg" data-enquiry="services-hero">
                   Get a proposal
                 </Button>
                 <Button href={site.phoneHref} variant="outline" size="lg" className="hide-with-bar">
@@ -92,7 +92,7 @@ export default function ServicesPage() {
               <Checklist items={flagship.included.slice(0, 4)} />
               <div className="btn-group" style={{ marginTop: "2rem" }}>
                 <Button href={`/services/${flagship.slug}`}>How rental works</Button>
-                <Button href="/contact" variant="outline">
+                <Button href="/contact" variant="outline" data-enquiry="services-flagship">
                   Get a proposal
                 </Button>
               </div>
