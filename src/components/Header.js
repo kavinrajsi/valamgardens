@@ -8,6 +8,26 @@ import { nav, site } from "@/lib/site";
 import { services } from "@/lib/services";
 import { PhoneIcon } from "./Icons";
 
+/**
+ * Position of each drawer row in the open animation, counted in the order the
+ * rows actually appear — the six service links sit between Services and About.
+ * Computed once at module scope: `nav` and `services` are static imports, so
+ * mutating a counter during render would be both wasteful and compiler-hostile.
+ */
+const drawerOrder = (() => {
+  const order = new Map();
+  let i = 0;
+  for (const item of nav) {
+    order.set(item.href, i++);
+    if (item.href === "/services") {
+      for (const s of services) order.set(`/services/${s.slug}`, i++);
+    }
+  }
+  return { order, count: i };
+})();
+
+const stagger = (href) => ({ "--i": drawerOrder.order.get(href) ?? 0 });
+
 export default function Header() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
@@ -78,6 +98,7 @@ export default function Header() {
                 <Link
                   href={item.href}
                   className="header__drawer-link"
+                  style={stagger(item.href)}
                   onClick={() => setOpen(false)}
                   aria-current={isCurrent(item.href) ? "page" : undefined}
                 >
@@ -90,6 +111,7 @@ export default function Header() {
                         <Link
                           href={`/services/${s.slug}`}
                           className="header__drawer-link header__drawer-sub"
+                          style={stagger(`/services/${s.slug}`)}
                           onClick={() => setOpen(false)}
                         >
                           {s.name}
@@ -101,7 +123,7 @@ export default function Header() {
               </li>
             ))}
           </ul>
-          <div className="header__drawer-actions">
+          <div className="header__drawer-actions" style={{ "--i": drawerOrder.count }}>
             <Link href="/contact" className="btn btn--primary btn--block" onClick={() => setOpen(false)}>
               Get a proposal
             </Link>

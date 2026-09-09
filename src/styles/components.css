@@ -213,6 +213,7 @@
   padding: 0.5rem 0 1rem;
 }
 .header__drawer-link {
+  position: relative;
   display: block;
   padding: 0.9rem 0;
   font-family: var(--font-heading);
@@ -221,6 +222,9 @@
   color: var(--color-black);
   text-decoration: none;
   border-bottom: 1px solid var(--color-line);
+  transition:
+    color var(--duration) var(--ease),
+    transform var(--duration) var(--ease);
 }
 .header__drawer-link[aria-current="page"] {
   color: var(--color-primary);
@@ -232,6 +236,81 @@
   font-weight: 500;
   border-bottom: 0;
 }
+
+/* ---------- Drawer micro-interactions ----------
+   The drawer goes display:none -> block, which nothing can transition, so the
+   entry is a keyframe on the rows instead. `backwards` holds each row at its
+   start values through its own delay — without it every row paints at full
+   opacity for a frame before dropping back to animate.
+
+   `--i` is set inline per row in Header.js, counted in visual order so the six
+   service links cascade between Services and About rather than restarting.
+
+   The 6px hover nudge stays inside the container's 12px padding, so it cannot
+   push a horizontal scrollbar into the drawer's own overflow-y: auto. */
+
+@keyframes drawer-row-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+}
+
+.header__drawer--open .header__drawer-link,
+.header__drawer--open .header__drawer-actions {
+  animation: drawer-row-in 260ms var(--ease) backwards;
+  animation-delay: calc(var(--i, 0) * 28ms);
+}
+
+/* The accent bar sits in the container gutter, so nothing reflows when it
+   appears. It is permanent on the current page and animates in on hover. */
+.header__drawer-link::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -0.5rem;
+  width: 3px;
+  height: 1.1em;
+  border-radius: 2px;
+  background: var(--color-primary);
+  transform: translateY(-50%) scaleY(0);
+  transition: transform var(--duration) var(--ease);
+}
+.header__drawer-link:hover::before,
+.header__drawer-link:focus-visible::before,
+.header__drawer-link[aria-current="page"]::before {
+  transform: translateY(-50%) scaleY(1);
+}
+.header__drawer-link:hover,
+.header__drawer-link:focus-visible {
+  color: var(--color-primary);
+  transform: translateX(6px);
+}
+.header__drawer-sub:hover,
+.header__drawer-sub:focus-visible {
+  transform: translateX(4px);
+}
+.header__drawer-link:active {
+  transform: translateX(3px);
+  transition-duration: 90ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header__drawer--open .header__drawer-link,
+  .header__drawer--open .header__drawer-actions {
+    animation: none;
+  }
+  .header__drawer-link,
+  .header__drawer-link::before {
+    transition: none;
+  }
+  .header__drawer-link:hover,
+  .header__drawer-link:focus-visible,
+  .header__drawer-link:active {
+    transform: none;
+  }
+}
+
 .header__drawer-actions {
   display: grid;
   gap: 0.75rem;
