@@ -1,0 +1,77 @@
+export const site = {
+  name: "Valam Gardens",
+  legalName: "Valam Gardens",
+  domain: "valamgardens.com",
+  url: "https://valamgardens.com",
+  tagline: "Gardens designed, built and cared for in Chennai",
+  description:
+    "Valam Gardens designs, installs and maintains gardens across Chennai. Vertical gardens, landscaping, terrace gardens, garden maintenance, plant rental for offices and bulk gift plants.",
+  email: "hello@valamgardens.com",
+  phone: "+91 9025083535",
+  phoneHref: "tel:+919025083535",
+  phoneDisplay: "+91 90250 83535",
+  whatsappHref:
+    "https://wa.me/919025083535?text=Hi%20Valam%20Gardens%2C%20I%27d%20like%20a%20free%20site%20visit.",
+  address: {
+    streetAddress: "Chennai",
+    addressLocality: "Chennai",
+    addressRegion: "Tamil Nadu",
+    postalCode: "600001",
+    addressCountry: "IN",
+  },
+  geo: { latitude: 13.0827, longitude: 80.2707 },
+  hours: "Monday to Saturday, 9:00 am to 7:00 pm",
+  openingHours: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      opens: "09:00",
+      closes: "19:00",
+    },
+  ],
+  areasServed: [
+    "Adyar",
+    "Anna Nagar",
+    "Besant Nagar",
+    "ECR",
+    "Guindy",
+    "Kilpauk",
+    "Kotturpuram",
+    "Mylapore",
+    "Nungambakkam",
+    "OMR",
+    "Perungudi",
+    "Porur",
+    "Sholinganallur",
+    "T. Nagar",
+    "Tambaram",
+    "Velachery",
+  ],
+  social: {
+    instagram: "https://www.instagram.com/valamgardens",
+    facebook: "https://www.facebook.com/valamgardens",
+  },
+  founded: "2025",
+};
+
+export const nav = [
+  { href: "/", label: "Home" },
+  { href: "/services", label: "Services" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
+];
+
+export const policyLinks = [
+  { href: "/privacy-policy", label: "Privacy policy" },
+  { href: "/terms", label: "Terms of service" },
+  { href: "/refund-policy", label: "Refund and cancellation" },
+];
+
+export function absoluteUrl(path = "/") {
+  return new URL(path, site.url).toString();
+}
+
+export function unsplash(id, w = 1200, h, extra = "") {
+  const size = h ? `w=${w}&h=${h}&fit=crop` : `w=${w}`;
+  return `https://images.unsplash.com/photo-${id}?auto=format&${size}&q=75${extra}`;
+}

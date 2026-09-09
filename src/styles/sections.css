@@ -1,0 +1,346 @@
+/* ---------- Hero (home) ---------- */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding-top: 2.5rem;
+  padding-bottom: 0;
+}
+.hero__grid {
+  align-items: flex-end;
+}
+.hero__copy {
+  padding-bottom: 2.5rem;
+}
+.hero__title {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-style: italic;
+  font-size: var(--text-display);
+  line-height: 0.98;
+  letter-spacing: -0.015em;
+  color: var(--color-black);
+  margin-bottom: 1.25rem;
+  text-wrap: balance;
+}
+.hero__lead {
+  font-size: var(--text-md);
+  color: var(--color-ink-70);
+  max-width: 46ch;
+  margin-bottom: 1.75rem;
+}
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+.hero__note {
+  font-size: var(--text-sm);
+  color: var(--color-ink-70);
+}
+.hero__note a {
+  font-weight: 600;
+}
+
+.hero__visual {
+  position: relative;
+}
+.hero__ground {
+  position: absolute;
+  inset: 22% -100vw 0 8%;
+  background: var(--color-secondary);
+  border-radius: var(--radius-arch);
+  z-index: 0;
+}
+.hero__media {
+  position: relative;
+  z-index: 1;
+  aspect-ratio: 4 / 5;
+  max-height: 72vh;
+  margin: 0 12% 0 0;
+  overflow: hidden;
+  border-radius: var(--radius-arch);
+  background: var(--color-secondary-soft);
+}
+.hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero__caption {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  bottom: 1.5rem;
+  padding: 0.85rem 1rem;
+  background: var(--color-white);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-black);
+  max-width: 220px;
+  line-height: 1.4;
+}
+
+@media (min-width: 992px) {
+  .hero {
+    padding-top: 4rem;
+  }
+  .hero__copy {
+    padding-bottom: 4rem;
+  }
+  .hero__visual {
+    max-width: 460px;
+    margin-left: auto;
+  }
+  .hero__media {
+    aspect-ratio: 4 / 5;
+    max-height: 600px;
+    margin-right: 0;
+  }
+  .hero__ground {
+    inset: 18% -100vw 0 18%;
+  }
+  .hero__caption {
+    left: -2rem;
+    bottom: 3rem;
+    padding: 1rem 1.25rem;
+    border-radius: var(--radius);
+    max-width: 240px;
+  }
+}
+
+/* ---------- Page hero (inner pages) ---------- */
+
+.page-hero {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+.page-hero__title {
+  font-size: var(--text-3xl);
+  line-height: 1.05;
+  margin-bottom: 1rem;
+}
+.page-hero__title--display {
+  padding-left: 0.06em;
+  margin-left: -0.06em;
+  font-weight: 900;
+  font-style: italic;
+  font-size: var(--text-display);
+  line-height: 0.98;
+  letter-spacing: -0.015em;
+}
+.page-hero__lead {
+  font-size: var(--text-md);
+  color: var(--color-ink-70);
+  max-width: 54ch;
+}
+.page-hero__actions {
+  margin-top: 1.75rem;
+}
+.page-hero__media {
+  margin-top: 2rem;
+}
+@media (min-width: 992px) {
+  .page-hero {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  .page-hero__media {
+    margin-top: 0;
+  }
+  .page-hero__media .media {
+    aspect-ratio: 4 / 5;
+    max-height: 560px;
+    max-width: 440px;
+    margin-left: auto;
+  }
+}
+
+/* ---------- CTA band ---------- */
+
+.cta-band {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-primary);
+  color: var(--color-white);
+  text-align: center;
+}
+.cta-band__inner {
+  padding: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+.cta-band__title {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-style: italic;
+  font-size: var(--text-3xl);
+  line-height: 1;
+  color: var(--color-white);
+  max-width: 18ch;
+}
+.cta-band__text {
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 48ch;
+}
+.cta-band .btn--outline {
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+.cta-band .btn--outline:hover {
+  border-color: var(--color-white);
+  color: var(--color-white);
+}
+.cta-band__leaf {
+  position: absolute;
+  right: -3rem;
+  bottom: -4rem;
+  width: 18rem;
+  height: 22rem;
+  border-radius: var(--radius-arch);
+  background: var(--color-secondary);
+  opacity: 0.18;
+  pointer-events: none;
+}
+@media (min-width: 992px) {
+  .cta-band__inner {
+    padding: 6rem 0;
+  }
+  .cta-band__leaf {
+    width: 28rem;
+    height: 34rem;
+    right: -6rem;
+  }
+}
+
+/* ---------- Service detail ---------- */
+
+.service-hero__line {
+  display: block;
+  font-weight: 900;
+  font-style: italic;
+  color: var(--color-primary);
+}
+.service-meta {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--color-line);
+}
+.service-meta__item {
+  font-size: var(--text-sm);
+}
+.service-meta__item strong {
+  display: block;
+  color: var(--color-black);
+}
+.service-meta__item span {
+  color: var(--color-ink-70);
+}
+@media (min-width: 576px) {
+  .service-meta {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.prose h2 {
+  margin-bottom: 1rem;
+}
+.prose h3 {
+  margin: 2rem 0 0.75rem;
+}
+.prose p + p {
+  margin-top: 1rem;
+}
+.prose p {
+  color: var(--color-ink-70);
+}
+.prose .answer {
+  color: var(--color-black);
+}
+
+.aside-card {
+  padding: 1.75rem;
+  border-radius: var(--radius);
+  background: var(--color-secondary-soft);
+}
+.aside-card__title {
+  font-size: var(--text-xl);
+  margin-bottom: 0.5rem;
+}
+.aside-card__text {
+  font-size: var(--text-sm);
+  color: var(--color-ink-70);
+  margin-bottom: 1.25rem;
+}
+/* .aside-card is pinned by ScrollTrigger (see StickyAside.js): position: sticky
+   cannot work inside ScrollSmoother's transformed content. With reduced motion
+   there is no smoother and no pin, so sticky is restored — it is a layout
+   affordance, not an animation. */
+@media (prefers-reduced-motion: reduce) {
+  .aside-card {
+    position: sticky;
+    top: calc(var(--header-height) + 1.5rem);
+  }
+}
+
+/* ---------- Gallery ---------- */
+
+.gallery__caption {
+  margin-top: 0.6rem;
+  font-size: var(--text-sm);
+  color: var(--color-ink-70);
+}
+
+/* ---------- Policy pages ---------- */
+
+.policy {
+  max-width: 72ch;
+}
+.policy h2 {
+  font-size: var(--text-xl);
+  margin: 2.5rem 0 0.75rem;
+}
+.policy h2:first-child {
+  margin-top: 0;
+}
+.policy p,
+.policy li {
+  color: var(--color-ink-70);
+}
+.policy p + p {
+  margin-top: 0.85rem;
+}
+.policy ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin: 0.75rem 0;
+  display: grid;
+  gap: 0.4rem;
+}
+.policy__updated {
+  font-size: var(--text-sm);
+  color: var(--color-ink-50);
+  margin-bottom: 2rem;
+}
+
+/* ---------- Not found ---------- */
+
+.not-found {
+  text-align: left;
+  padding: 6rem 0;
+}
+.not-found__code {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-style: italic;
+  font-size: var(--text-display);
+  color: var(--color-primary);
+  line-height: 1;
+  margin-bottom: 1rem;
+}

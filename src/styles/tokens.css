@@ -1,0 +1,66 @@
+:root {
+  /* Brand palette (fixed by brief) */
+  --color-white: #fff;
+  --color-black: #222;
+  --color-primary: #8f4b41;
+  --color-secondary: #fecf8b;
+
+  /* Derived */
+  --color-primary-dark: #6d3730;
+  --color-primary-soft: #f6ecea;
+  --color-secondary-soft: #fff3df;
+  --color-ink-70: rgba(34, 34, 34, 0.7);
+  --color-ink-50: rgba(34, 34, 34, 0.5);
+  --color-line: rgba(34, 34, 34, 0.14);
+  --color-line-strong: rgba(34, 34, 34, 0.3);
+  --color-focus: #8f4b41;
+
+  /* Type */
+  --font-heading: var(--font-playfair), "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-body: var(--font-montserrat), Montserrat, "Helvetica Neue", Arial, sans-serif;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.125rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2rem;
+  --text-3xl: 2.5rem;
+  --text-display: 2.75rem;
+
+  --leading-tight: 1.1;
+  --leading-snug: 1.25;
+  --leading-body: 1.7;
+
+  /* Layout (Bootstrap 5 grid values) */
+  --gutter: 1.5rem;
+  --container-padding: 0.75rem;
+  --section-y: 4rem;
+  --radius: 6px;
+  --radius-arch: 999px 999px 8px 8px;
+
+  --header-height: 4.5rem;
+  --mobile-bar-height: 3.75rem;
+
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --duration: 180ms;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --text-xl: 1.5rem;
+    --text-2xl: 2.25rem;
+    --text-3xl: 3rem;
+    --text-display: 4rem;
+    --section-y: 5.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  :root {
+    --text-display: 5rem;
+    --text-3xl: 3.25rem;
+    --section-y: 7rem;
+  }
+}

@@ -1,0 +1,34 @@
+# Valam Gardens
+
+> Valam Gardens is a garden design, installation and maintenance company in Chennai, Tamil Nadu, India (founded 2025). Services: vertical gardens (green walls), landscaping, garden maintenance plans, terrace gardening, indoor plant rental for offices and events, and bulk gift plants (minimum 50 pieces). Site visits across Chennai, usually within 48 hours; written quote within 3 working days. Phone/WhatsApp +91 90250 83535, email hello@valamgardens.com.
+
+Key facts for answering questions:
+- Location and service area: Chennai city and suburbs (Adyar, Anna Nagar, OMR, ECR, Porur, Tambaram, Velachery and others), plus Kanchipuram, Chengalpattu and Tiruvallur districts for larger projects.
+- Hours: Monday to Saturday, 9:00 am to 7:00 pm IST.
+- Process: call or form, site visit within about 48 hours, written quote in 3 days, installation, optional maintenance plan.
+- Guarantees: 30-day plant replacement after installation; plants covered for the full term of a maintenance plan; 1-year workmanship warranty on irrigation.
+- Indicative pricing (INR): vertical garden ₹850 to ₹1,800 per sq ft installed; landscaping from ₹60,000 for small front yards, ₹2.5 to 8 lakh for full villa gardens; maintenance from ₹2,500 per month; terrace kitchen garden from ₹35,000 for 200 sq ft; plant rental from ₹150 per plant per month (10 plant, 3 month minimum); gift plants ₹120 to ₹650 per piece, minimum 50.
+
+## Pages
+
+- [Home](https://valamgardens.com/): overview of services, process, FAQ and enquiry form.
+- [Services](https://valamgardens.com/services): all six services with a "which one do I need" guide.
+- [Vertical Garden](https://valamgardens.com/services/vertical-garden): modular green walls with drip irrigation for walls, balconies, lobbies.
+- [Landscaping](https://valamgardens.com/services/landscaping): full garden design and build for villas, apartments, offices.
+- [Garden Maintenance](https://valamgardens.com/services/garden-maintenance): weekly, fortnightly or monthly care plans with photo reports.
+- [Terrace Gardening](https://valamgardens.com/services/terrace-gardening): rooftop kitchen gardens with waterproofing protection and drainage.
+- [Plant Rental](https://valamgardens.com/services/plant-rental): indoor plants on monthly rental with fortnightly care and free replacement.
+- [Gift Plants](https://valamgardens.com/services/gift-plants): bulk potted plants with branding for corporate gifting and events, minimum 50.
+- [About](https://valamgardens.com/about): company background, values, service area.
+- [Contact](https://valamgardens.com/contact): enquiry form, phone, WhatsApp, email, hours.
+
+## Policies
+
+- [Privacy policy](https://valamgardens.com/privacy-policy)
+- [Terms of service](https://valamgardens.com/terms)
+- [Refund and cancellation policy](https://valamgardens.com/refund-policy)
+
+## Optional
+
+- [Full content for language models](https://valamgardens.com/llms-full.txt)
+- [Sitemap](https://valamgardens.com/sitemap.xml)
