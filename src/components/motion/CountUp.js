@@ -3,11 +3,8 @@
 import { useRef } from "react";
 import { gsap, useGSAP, EASE, START, MOTION } from "@/lib/gsap";
 
-/* Splits "48h" into 48 and "h", "6" into 6 and "". */
+/* Splits "48h" into 48 and "h", "2025" into 2025 and "". */
 const VALUE = /^(\d[\d,]*)(.*)$/;
-
-/* A bare four-digit year counting up from zero reads as a broken value. */
-const YEAR = /^\d{4}$/;
 
 /**
  * Counts the numbers in `.stat__value` up on scroll-in.
@@ -35,9 +32,8 @@ export default function CountUp({
         const original = new Map(nodes.map((n) => [n, n.textContent]));
 
         nodes.forEach((node) => {
-          const text = node.textContent.trim();
-          const match = VALUE.exec(text);
-          if (!match || YEAR.test(text)) return;
+          const match = VALUE.exec(node.textContent.trim());
+          if (!match) return;
 
           const end = Number(match[1].replace(/,/g, ""));
           const suffix = match[2];
