@@ -156,6 +156,7 @@ export async function submitContact(prevState, formData) {
   const to = process.env.CONTACT_TO_EMAIL || site.email;
   const cc = parseAddressList(process.env.CONTACT_CC_EMAIL);
   const bcc = parseAddressList(process.env.CONTACT_BCC_EMAIL);
+  const extraReplyTo = parseAddressList(process.env.CONTACT_REPLY_TO_EMAIL);
 
   const rows = [
     ["Name", data.name],
@@ -215,7 +216,7 @@ ${metaRows.map(([k, v]) => `<tr><td style="color:#888">${k}</td><td>${escapeHtml
         to: [to],
         cc: cc.length ? cc : undefined,
         bcc: bcc.length ? bcc : undefined,
-        reply_to: data.email || undefined,
+        reply_to: [data.email, ...extraReplyTo].filter(Boolean),
         subject: `Enquiry: ${data.service || "General"} from ${data.name}`,
         text,
         html,
