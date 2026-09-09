@@ -84,7 +84,7 @@ export default async function ServicePage({ params }) {
               <p className="page-hero__lead answer">{service.summary}</p>
               <div className="btn-group page-hero__actions">
                 <Button href="#enquire" size="lg">
-                  Get a quote for {service.name.toLowerCase()}
+                  Get a quote
                 </Button>
                 <Button href={site.phoneHref} variant="outline" size="lg" className="hide-with-bar">
                   <PhoneIcon className="btn__icon" />

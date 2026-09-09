@@ -16,6 +16,10 @@
   border-radius: var(--radius);
   border: 1.5px solid transparent;
   white-space: nowrap;
+  /* nowrap means a long label cannot reflow, so without this cap it widens
+     its container and scrolls the whole page sideways. Labels are short by
+     design; this is the backstop for when one is not. */
+  max-width: 100%;
   transition:
     background-color var(--duration) var(--ease),
     color var(--duration) var(--ease),
