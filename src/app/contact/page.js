@@ -39,9 +39,8 @@ export default function ContactPage() {
                 Let’s look at your space.
               </SplitHeading>
               <p className="page-hero__lead">
-                Tell us how much of your office you want planted — one floor, a reception, a whole
-                campus — and we will arrange a walk-through and send a proposal with your plan
-                priced out. Home gardens are welcome here too.
+                Tell us how much of your office you want planted. We walk the floor and send a
+                proposal. Home gardens welcome too.
               </p>
             </Reveal>
           </div>

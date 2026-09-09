@@ -62,9 +62,8 @@ export default function ServicesPage() {
                 Rental first. Everything else too.
               </SplitHeading>
               <p className="page-hero__lead">
-                Office plant rental is what most clients start with, and the rest of what we do sits
-                behind it. Everything below is designed, installed and maintained by {site.name}{" "}
-                staff, not subcontracted, and every job is quoted after a walk-through.
+                Rental is where most clients start. Everything here is installed and maintained by
+                {" "}{site.name} staff, not subcontracted.
               </p>
               <div className="btn-group page-hero__actions">
                 <Button href="/contact" size="lg">

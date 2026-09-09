@@ -54,9 +54,8 @@ export default function HomePage() {
                 Grow your space.
               </SplitHeading>
               <p className="hero__lead">
-                Office plant rental in Chennai, fully managed. We install the plants, maintain them
-                every week and replace anything that dies, free. You never buy a plant, and nobody
-                on your team has to water one.
+                Fully managed office plant rental in Chennai. We install them, maintain them every
+                week, and replace anything that dies — free.
               </p>
               <div className="hero__actions">
                 <Button href="/contact" size="lg">
@@ -68,16 +67,9 @@ export default function HomePage() {
                 </Button>
               </div>
               <p className="hero__note">
-                Monthly, quarterly and annual plans, priced after a walk-through. Or{" "}
+                Monthly, quarterly or annual plans. Or{" "}
                 <a href={site.whatsappHref} target="_blank" rel="noopener noreferrer">message us on WhatsApp</a>.
               </p>
-              <ul className="audience" aria-label="Who we plant for">
-                {audienceSegments.secondary.map((item) => (
-                  <li className="audience__item" key={item}>
-                    {item}
-                  </li>
-                ))}
-              </ul>
             </div>
             <div className="col-12 col-lg-6">
               <div className="hero__visual">
@@ -134,6 +126,13 @@ export default function HomePage() {
                 One team handles the whole thing, from the first walk-through to the plant we swap
                 out next Tuesday. There is nothing for your facilities team to schedule.
               </p>
+              <ul className="audience" aria-label="Who we plant for">
+                {audienceSegments.secondary.map((item) => (
+                  <li className="audience__item" key={item}>
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </Reveal>
             <Stagger className="col-12 col-lg-8" select=".feature">
               <Features items={rentalPillars} />

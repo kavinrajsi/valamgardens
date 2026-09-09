@@ -65,10 +65,8 @@ export default function AboutPage() {
                 Valam means to thrive.
               </SplitHeading>
               <p className="page-hero__lead">
-                {site.name} started in 2025 on a simple observation: every office wants plants, and
-                almost none wants to own them. So we rent them instead — installed, maintained every
-                week and replaced free when they fail. We also design and build gardens across
-                Chennai, for offices and homes alike.
+                Every office wants plants. Almost none wants to own them. So since 2025 we have
+                rented them instead — installed, maintained, replaced.
               </p>
               <div className="btn-group page-hero__actions">
                 <Button href="/contact" size="lg">
