@@ -89,6 +89,14 @@ function formatParams(params) {
   return entries.length ? entries.map(([k, v]) => `${k}=${v}`).join(", ") : "";
 }
 
+/** "Name <a@x.com>,Name2 <b@x.com>" env var -> ["Name <a@x.com>", "Name2 <b@x.com>"] */
+function parseAddressList(value) {
+  return (value || "")
+    .split(",")
+    .map((addr) => addr.trim())
+    .filter(Boolean);
+}
+
 function escapeHtml(str) {
   return str.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 }
@@ -146,6 +154,8 @@ export async function submitContact(prevState, formData) {
   const apiKey = process.env.RESEND_API_KEY;
   const from = process.env.CONTACT_FROM_EMAIL || `Valam Gardens Website <onboarding@resend.dev>`;
   const to = process.env.CONTACT_TO_EMAIL || site.email;
+  const cc = parseAddressList(process.env.CONTACT_CC_EMAIL);
+  const bcc = parseAddressList(process.env.CONTACT_BCC_EMAIL);
 
   const rows = [
     ["Name", data.name],
@@ -203,6 +213,8 @@ ${metaRows.map(([k, v]) => `<tr><td style="color:#888">${k}</td><td>${escapeHtml
       body: JSON.stringify({
         from,
         to: [to],
+        cc: cc.length ? cc : undefined,
+        bcc: bcc.length ? bcc : undefined,
         reply_to: data.email || undefined,
         subject: `Enquiry: ${data.service || "General"} from ${data.name}`,
         text,
