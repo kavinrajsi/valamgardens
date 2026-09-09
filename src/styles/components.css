@@ -1048,76 +1048,63 @@
   white-space: nowrap;
 }
 
-/* ---------- Compare (buying vs renting) ----------
-   One card per aspect, each holding both halves. This replaced a real
-   <table>, which needed a horizontal scroll container on mobile and read as
-   a spec sheet rather than an argument. */
+/* ---------- Compare table (buying vs renting) ----------
+   The wrapper scrolls on narrow screens so the table never widens the page.
+   It is focusable and labelled so keyboard users can reach the scroll area. */
 
 .compare {
-  display: grid;
-  gap: 1rem;
-  list-style: none;
-}
-.compare__item {
-  padding: 1.5rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   border: 1px solid var(--color-line);
   border-radius: var(--radius);
-  background: var(--color-white);
 }
-.compare__aspect {
-  margin-bottom: 1.25rem;
-  font-size: var(--text-xs);
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--color-ink-50);
+.compare__table {
+  width: 100%;
+  min-width: 40rem;
+  border-collapse: collapse;
+  text-align: left;
 }
-.compare__pair {
-  display: grid;
-  gap: 1rem;
+.compare__caption {
+  padding: 1.25rem 1.25rem 0;
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  text-align: left;
 }
-.compare__side {
-  padding: 1rem 1.15rem;
-  border-radius: var(--radius);
-  background: rgba(34, 34, 34, 0.03);
-}
-.compare__side--ours {
-  background: var(--color-primary-soft);
-}
-.compare__label {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 0.5rem;
-  font-size: var(--text-xs);
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--color-ink-50);
-}
-.compare__side--ours .compare__label {
-  color: var(--color-primary);
-}
-.compare__icon {
-  flex: none;
-  width: 1rem;
-  height: 1rem;
-}
-.compare__text {
+.compare__table th,
+.compare__table td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--color-line);
   font-size: var(--text-sm);
   line-height: 1.6;
-  color: var(--color-ink-70);
+  vertical-align: top;
 }
-.compare__side--ours .compare__text {
+.compare__table thead th {
+  padding-top: 1.25rem;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-70);
+  border-bottom-color: var(--color-line-strong);
+}
+.compare__table tbody tr:last-child th,
+.compare__table tbody tr:last-child td {
+  border-bottom: 0;
+}
+.compare__aspect {
+  width: 22%;
+  font-weight: 600;
   color: var(--color-black);
 }
-
-/* Side by side once there is room. Below this the two halves stack, cross
-   above tick, which is the order the argument is made in. */
-@media (min-width: 768px) {
-  .compare__pair {
-    grid-template-columns: 1fr 1fr;
-  }
+.compare__table td:not(.compare__col--ours) {
+  color: var(--color-ink-70);
+}
+.compare__col--ours {
+  background: var(--color-primary-soft);
+  color: var(--color-black);
+}
+.compare__table thead .compare__col--ours {
+  color: var(--color-primary);
 }
 
 /* ---------- Plan cards ---------- */

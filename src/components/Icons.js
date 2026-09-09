@@ -41,14 +41,6 @@ export function CheckIcon({ className }) {
   );
 }
 
-export function CrossIcon({ className }) {
-  return (
-    <svg viewBox="0 0 24 24" className={className} {...base} strokeWidth={2.2}>
-      <path d="M6 6 18 18M18 6 6 18" />
-    </svg>
-  );
-}
-
 export function LeafIcon({ className }) {
   return (
     <svg viewBox="0 0 24 24" className={className} {...base}>

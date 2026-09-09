@@ -12,7 +12,7 @@ import ServiceCard from "@/components/ServiceCard";
 import ProcessSteps from "@/components/ProcessSteps";
 import Features from "@/components/Features";
 import Plans from "@/components/Plans";
-import Compare from "@/components/Compare";
+import CompareTable from "@/components/CompareTable";
 import SectionHeading from "@/components/SectionHeading";
 import Faq from "@/components/Faq";
 import ContactForm from "@/components/ContactForm";
@@ -149,7 +149,7 @@ export default async function ServicePage({ params }) {
               lead="The same plants, on very different terms."
             />
             <Reveal>
-              <Compare />
+              <CompareTable />
             </Reveal>
           </div>
         </section>

@@ -21,7 +21,7 @@ import { site, unsplash } from "@/lib/site";
 import { services, generalFaqs } from "@/lib/services";
 import { audienceSegments, rentalPillars } from "@/lib/rental";
 import Plans from "@/components/Plans";
-import Compare from "@/components/Compare";
+import CompareTable from "@/components/CompareTable";
 import { buildMetadata } from "@/lib/seo";
 import { graph, webPageSchema, faqSchema, servicesListSchema } from "@/lib/schema";
 
@@ -113,7 +113,7 @@ export default function HomePage() {
             }
           />
           <Reveal>
-            <Compare />
+            <CompareTable />
           </Reveal>
         </div>
       </section>
