@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileCtaBar from "@/components/MobileCtaBar";
 import EnquiryModal from "@/components/EnquiryModal";
+import AttributionTracker from "@/components/AttributionTracker";
 import JsonLd from "@/components/JsonLd";
 import SmoothScroll from "@/components/motion/SmoothScroll";
 import { site } from "@/lib/site";
@@ -79,6 +80,7 @@ export default function RootLayout({ children }) {
         </SmoothScroll>
         <MobileCtaBar />
         <EnquiryModal />
+        <AttributionTracker />
       </body>
     </html>
   );

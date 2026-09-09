@@ -1,7 +1,8 @@
 "use client";
 
-import { useActionState, useEffect, useId } from "react";
+import { useActionState, useEffect, useId, useRef } from "react";
 import { ScrollTrigger } from "@/lib/gsap";
+import { readAttribution } from "@/lib/attribution";
 import { submitContact } from "@/app/actions/contact";
 import { services } from "@/lib/services";
 import { site } from "@/lib/site";
@@ -11,6 +12,11 @@ const initialState = { status: "idle", message: "", errors: {} };
 export default function ContactForm({ defaultService = "", compact = false, source = "contact" }) {
   const [state, formAction, pending] = useActionState(submitContact, initialState);
   const id = useId();
+  /* When this form became visible to a real person. Set in an effect, never
+     during render: these pages are statically prerendered, so a render-time
+     Date.now() would freeze at build time and the server would end up
+     comparing every submission against the last deploy. */
+  const readyAt = useRef(0);
   const errors = state.errors || {};
   const submitted = state.status === "ok";
 
@@ -19,6 +25,19 @@ export default function ContactForm({ defaultService = "", compact = false, sour
   useEffect(() => {
     if (submitted) ScrollTrigger.refresh();
   }, [submitted]);
+
+  useEffect(() => {
+    readyAt.current = Date.now();
+  }, []);
+
+  /* Attribution and the elapsed time are read at submit, not render: neither
+     exists during SSR, and reading storage in render would mismatch
+     hydration. Wrapping the action keeps all four render sites in step. */
+  function action(formData) {
+    formData.append("attribution", JSON.stringify(readAttribution()));
+    formData.append("elapsed", readyAt.current ? String(Date.now() - readyAt.current) : "");
+    return formAction(formData);
+  }
 
   if (submitted) {
     return (
@@ -31,11 +50,16 @@ export default function ContactForm({ defaultService = "", compact = false, sour
   }
 
   return (
-    <form className="form" action={formAction} noValidate>
+    <form className="form" action={action} noValidate>
       <input type="hidden" name="source" value={source} />
+      {/* Two decoys, not one: bots that have learned to skip a field named
+          "company" often still fill a field named "website". Hidden off-screen
+          rather than with display:none, which many bots ignore. */}
       <div className="form__honey" aria-hidden="true">
         <label htmlFor={`${id}-company`}>Company</label>
         <input id={`${id}-company`} type="text" name="company" tabIndex={-1} autoComplete="off" />
+        <label htmlFor={`${id}-website`}>Website</label>
+        <input id={`${id}-website`} type="text" name="website" tabIndex={-1} autoComplete="off" />
       </div>
 
       <div className="form__row form__row--2">
