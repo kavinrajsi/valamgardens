@@ -3,7 +3,7 @@ import { site } from "@/lib/site";
 import { buildMetadata } from "@/lib/seo";
 
 const title = "Privacy policy";
-const description = `How ${site.name} collects, uses and protects the personal information you share when you enquire, book a site visit or use valamgardens.com.`;
+const description = `How ${site.name} collects, uses and protects the personal information you share when you enquire, request a proposal or use valamgardens.com.`;
 
 export const metadata = buildMetadata({ title, description, path: "/privacy-policy" });
 
@@ -22,13 +22,13 @@ export default function PrivacyPolicyPage() {
       <ul>
         <li>Contact details you give us: name, phone number, email address and location in Chennai.</li>
         <li>Details about your project: the service you are interested in, the space, photos you send and your message.</li>
-        <li>Site visit and project records: measurements, quotes, invoices and maintenance reports.</li>
+        <li>Walk-through and plan records: measurements, proposals, invoices and maintenance visit reports.</li>
         <li>Technical data when you visit the website: IP address, browser, pages viewed and referring site, collected through server logs and privacy-respecting analytics.</li>
       </ul>
 
       <h2>How we use it</h2>
       <ul>
-        <li>To respond to your enquiry, arrange a site visit and send you a quote.</li>
+        <li>To respond to your enquiry, arrange a walk-through and send you a proposal.</li>
         <li>To deliver and invoice the services you order and to schedule maintenance visits.</li>
         <li>To send occasional updates about seasonal care or offers, only if you ask for them. You can opt out at any time.</li>
         <li>To keep the website secure and understand which pages are useful.</li>

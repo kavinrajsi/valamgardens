@@ -18,22 +18,26 @@ import { graph, webPageSchema, breadcrumbSchema } from "@/lib/schema";
 
 const title = "About";
 const description =
-  "Valam Gardens is a Chennai garden design, installation and maintenance company founded in 2025. Meet the team behind our vertical gardens, landscapes, terrace gardens and office plant plans.";
+  "Valam Gardens rents and maintains indoor plants for offices across Chennai, and designs and builds gardens. Founded in 2025. Valam is Tamil for to thrive — that is the whole idea.";
 
 export const metadata = buildMetadata({ title, description, path: "/about" });
 
 const values = [
   {
-    title: "Plants first, then everything else",
-    body: "We choose species that live in Chennai's climate before we choose pots, paving or lights. A garden that survives is the only garden worth paying for.",
+    title: "Thriving, not just installed",
+    body: "Valam is Tamil for to thrive. A plant that arrives beautiful and dies in a month has failed, so we are judged on how the space looks in month six, not on delivery day.",
+  },
+  {
+    title: "The upkeep is ours, not yours",
+    body: "Nobody on your team should be watering anything. We keep the plants ours, visit every week and replace what fails at our cost, because that is the only version of this that actually works.",
   },
   {
     title: "Honest about what things cost",
-    body: "Written estimates before work starts, itemised so you can trim scope. No surprise additions on the final bill.",
+    body: "Plans are quoted after we have seen the space, itemised so you can trim scope. No surprise additions, and no price that assumes an office we have not walked.",
   },
   {
-    title: "Still there after handover",
-    body: "Most of our clients keep us on a maintenance plan. We would rather build fewer gardens and keep them all looking good.",
+    title: "Styled for the room it is in",
+    body: "A bank branch, a start-up floor and a hospital lobby need three different answers. We choose species and planters for the space and the brand, not from a standing catalogue.",
   },
 ];
 
@@ -58,17 +62,17 @@ export default function AboutPage() {
           <div className="row row--gy-lg row--align-center">
             <Reveal className="col-12 col-lg-6">
               <SplitHeading as="h1" id="about-title" className="page-hero__title page-hero__title--display">
-                Grown in Chennai, for Chennai.
+                Valam means to thrive.
               </SplitHeading>
               <p className="page-hero__lead">
-                {site.name} started in 2025 with one gardener, a van and a conviction: gardens in
-                this city fail because they are designed for somewhere else. We design, build and
-                look after gardens across Chennai with small-team attention, and we stay on after
-                handover.
+                {site.name} started in 2025 on a simple observation: every office wants plants, and
+                almost none wants to own them. So we rent them instead — installed, maintained every
+                week and replaced free when they fail. We also design and build gardens across
+                Chennai, for offices and homes alike.
               </p>
               <div className="btn-group page-hero__actions">
                 <Button href="/contact" size="lg">
-                  Book a site visit
+                  Get a proposal
                 </Button>
                 <Button href="/services" variant="outline" size="lg">
                   See our services
@@ -103,25 +107,26 @@ export default function AboutPage() {
         <div className="container">
           <div className="row row--gy-lg">
             <Reveal className="col-12 col-lg-5">
-              <SplitHeading id="story-title">What we believe about gardens here</SplitHeading>
+              <SplitHeading id="story-title">Why we rent instead of sell</SplitHeading>
             </Reveal>
             <Stagger className="col-12 col-lg-7 prose" select="p">
               <p className="answer">
-                Chennai is hot for eight months, wet for two and humid all year. Bore water is
-                hard, soil is often clay or builder’s fill, and terraces bake. A garden designed
-                from a catalogue will look wonderful in February and be gone by June.
+                We kept seeing the same thing in Chennai offices. Plants arrive for a launch or a
+                refit, look wonderful for six weeks, and then somebody goes on leave. By the third
+                month half of them are brown, and the company has paid full price for every one.
               </p>
               <p>
-                So we start with the site, not the mood board. Which walls get afternoon sun. Where
-                water pools after rain. How far the nearest tap is. The plant list follows: hardy
-                natives and proven exotics, mulched beds, drip lines on timers. Then the design
-                brings in the paths, seating and lighting that make the garden a place you actually
-                use.
+                Selling plants to an office puts the risk in the wrong place. Renting them puts it
+                back on us. The plants stay ours, so we visit every week, and when one declines we
+                swap it at our cost rather than sending an invoice. There is no capital outlay, no
+                depreciating asset on your books and nothing for your facilities team to schedule.
               </p>
               <p>
-                Most of our work is residential: villas, independent houses and apartment
-                associations. The rest is offices, cafés and schools that want green without a
-                gardener on payroll, through our plant rental and maintenance plans.
+                Everything else we do follows the same logic. Vertical gardens, landscapes, terrace
+                gardens and maintenance plans, for offices and campuses and for homes across the
+                city — planned around Chennai’s heat, hard water and monsoon drainage, then kept
+                that way. Valam is Tamil for to thrive, which is the part most plant companies
+                leave to you.
               </p>
             </Stagger>
           </div>
@@ -132,7 +137,7 @@ export default function AboutPage() {
         <div className="container">
           <div className="row row--gy-lg">
             <Reveal className="col-12 col-lg-4">
-              <SplitHeading id="values-title">How we work</SplitHeading>
+              <SplitHeading id="values-title">What we stand for</SplitHeading>
             </Reveal>
             <Stagger className="col-12 col-lg-8" select=".feature">
               <Features items={values} />

@@ -1,5 +1,6 @@
 import { site, absoluteUrl } from "@/lib/site";
 import { services, generalFaqs, process, reasons } from "@/lib/services";
+import { plans, rentVsBuy, rentalPillars } from "@/lib/rental";
 
 export const dynamic = "force-static";
 
@@ -23,14 +24,33 @@ export function GET() {
   lines.push(`- Email: ${site.email}`);
   lines.push(`- Hours: ${site.hours}`);
   lines.push(`- Service area: all of Chennai (${site.areasServed.join(", ")}) plus Kanchipuram, Chengalpattu and Tiruvallur districts.`);
-  lines.push("- Site visit: across Chennai, usually within 48 hours. Written quote within 3 working days.");
-  lines.push("- Guarantees: 30-day plant replacement after installation; plants covered for the full term of a maintenance plan; 1-year workmanship warranty on irrigation and hardscape.");
+  lines.push("- Flagship service: fully managed office plant rental. Plants and planters are supplied on a subscription, installed, maintained weekly and replaced free if they decline. The plants remain the property of Valam Gardens.");
+  lines.push("- Pricing: on request for every service. Rental runs on named monthly, quarterly and annual plans, quoted after a walk-through. No public price list.");
+  lines.push("- Site visits and walk-throughs are chargeable; the call-out charge is confirmed when booking.");
+  lines.push("- Guarantees: any rented plant that declines is replaced free for the life of the plan. Plants sold and installed outside a rental plan are covered for 30 days; irrigation and hardscape carry a 1-year workmanship warranty.");
   lines.push("");
+  lines.push("## What office plant rental includes");
+  lines.push("");
+  rentalPillars.forEach((r) => lines.push(`- ${r.title}: ${r.body}`));
+  lines.push("");
+  lines.push("## Buying plants against renting them");
+  lines.push("");
+  rentVsBuy.forEach((r) => lines.push(`- ${r.aspect}. Buying: ${r.buying} Renting from Valam: ${r.renting}`));
+  lines.push("");
+  lines.push("## Rental plans (price on request)");
+  lines.push("");
+  plans.forEach((p) => {
+    lines.push(`### ${p.name}`);
+    lines.push(`${p.cadence}. Best for: ${p.bestFor}`);
+    p.includes.forEach((i) => lines.push(`- ${i}`));
+    lines.push(p.note);
+    lines.push("");
+  });
   lines.push("## Why clients choose Valam Gardens");
   lines.push("");
   reasons.forEach((r) => lines.push(`- ${r.title}: ${r.body}`));
   lines.push("");
-  lines.push("## How a project runs");
+  lines.push("## How an engagement runs");
   lines.push("");
   process.forEach((p, i) => lines.push(`${i + 1}. ${p.title}. ${p.body}`));
   lines.push("");

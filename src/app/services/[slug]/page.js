@@ -11,6 +11,9 @@ import Checklist from "@/components/Checklist";
 import ServiceCard from "@/components/ServiceCard";
 import ProcessSteps from "@/components/ProcessSteps";
 import Features from "@/components/Features";
+import Plans from "@/components/Plans";
+import CompareTable from "@/components/CompareTable";
+import SectionHeading from "@/components/SectionHeading";
 import Faq from "@/components/Faq";
 import ContactForm from "@/components/ContactForm";
 import CtaBand from "@/components/CtaBand";
@@ -18,6 +21,7 @@ import JsonLd from "@/components/JsonLd";
 import { PhoneIcon } from "@/components/Icons";
 import { site } from "@/lib/site";
 import { services, getService, getRelated, reasons } from "@/lib/services";
+import { plantBenefits } from "@/lib/rental";
 import { buildMetadata } from "@/lib/seo";
 import { graph, webPageSchema, breadcrumbSchema, serviceSchema, faqSchema } from "@/lib/schema";
 
@@ -33,7 +37,7 @@ export async function generateMetadata({ params }) {
   if (!service) return {};
   return buildMetadata({
     title: `${service.name} in Chennai`,
-    description: `${service.summary} Site visit in 48 hours, written quote in 3 days. ${service.duration}.`,
+    description: `${service.summary} ${service.duration}.`,
     path: `/services/${service.slug}`,
     image: service.image,
     keywords: [`${service.name.toLowerCase()} Chennai`, `${service.name.toLowerCase()} cost Chennai`],
@@ -53,6 +57,9 @@ export default async function ServicePage({ params }) {
   ];
   const related = getRelated(service);
   const title = `${service.name} in Chennai`;
+  /* The rental page carries the plan tiers, the buy-vs-rent argument and the
+     case for plants at work. Every other service page is unchanged. */
+  const isRental = service.slug === "plant-rental";
 
   return (
     <>
@@ -142,7 +149,7 @@ export default async function ServicePage({ params }) {
               <StickyAside className="aside-card" id="enquire">
                 <h2 className="aside-card__title">Get a quote</h2>
                 <p className="aside-card__text">
-                  Share your number and we call back the same working day to fix a site visit.
+                  Share your number and we call back the same working day to arrange a walk-through.
                 </p>
                 <ContactForm defaultService={service.name} compact source={`service:${service.slug}`} />
               </StickyAside>
@@ -150,6 +157,51 @@ export default async function ServicePage({ params }) {
           </div>
         </div>
       </section>
+
+      {isRental && (
+        <section className="section" aria-labelledby="rental-compare-title">
+          <div className="container">
+            <SectionHeading
+              id="rental-compare-title"
+              title="Buying against renting"
+              lead="The same plants, on very different terms."
+            />
+            <Reveal>
+              <CompareTable />
+            </Reveal>
+          </div>
+        </section>
+      )}
+
+      {isRental && (
+        <section className="section section--line-top" aria-labelledby="rental-plans-title">
+          <div className="container">
+            <SectionHeading
+              id="rental-plans-title"
+              title="Plans"
+              lead="Every plan includes installation, weekly maintenance and free replacement. The cycle you pick decides the rate and how far the styling and account support go."
+            />
+            <Stagger select=".plan">
+              <Plans />
+            </Stagger>
+          </div>
+        </section>
+      )}
+
+      {isRental && (
+        <section className="section" aria-labelledby="rental-benefits-title">
+          <div className="container">
+            <SectionHeading
+              id="rental-benefits-title"
+              title="Why plants belong at work"
+              lead="Offices are sealed, air-conditioned and lit from above. Plants are one of the few things that make that bearable."
+            />
+            <Stagger select=".feature">
+              <Features items={plantBenefits} />
+            </Stagger>
+          </div>
+        </section>
+      )}
 
       <section className="section section--soft" aria-labelledby="service-why-title">
         <div className="container">
@@ -205,7 +257,7 @@ export default async function ServicePage({ params }) {
         </div>
       </section>
 
-      <CtaBand title={`Ready for ${service.name.toLowerCase()}?`} />
+      <CtaBand title={isRental ? "Ready to plant your office?" : `Ready for ${service.name.toLowerCase()}?`} />
     </>
   );
 }

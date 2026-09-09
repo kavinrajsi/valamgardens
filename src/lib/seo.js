@@ -8,12 +8,12 @@ export function buildMetadata({ title, description, path = "/", image, type = "w
     description,
     keywords: [
       ...keywords,
-      "garden services Chennai",
+      "office plant rental Chennai",
+      "indoor plant rental Chennai",
+      "corporate plant rental Chennai",
+      "office plants Chennai",
+      "plant maintenance service Chennai",
       "landscaping Chennai",
-      "vertical garden Chennai",
-      "terrace garden Chennai",
-      "plant rental Chennai",
-      "corporate gift plants Chennai",
     ],
     alternates: { canonical: path },
     openGraph: {

@@ -4,7 +4,7 @@ import { site } from "@/lib/site";
 import { buildMetadata } from "@/lib/seo";
 
 const title = "Terms of service";
-const description = `The terms on which ${site.name} provides garden design, installation, maintenance, plant rental and gift plant services in Chennai.`;
+const description = `The terms on which ${site.name} provides office plant rental, garden design, installation, maintenance and gift plant services in Chennai.`;
 
 export const metadata = buildMetadata({ title, description, path: "/terms" });
 
@@ -14,14 +14,15 @@ export default function TermsPage() {
       <h2>Scope</h2>
       <p>
         These terms apply to all quotes, orders and services provided by {site.name} in Chennai and
-        surrounding districts, including vertical gardens, landscaping, garden maintenance, terrace
-        gardening, plant rental and gift plants. A signed quote or a written confirmation by email or
-        WhatsApp forms the contract between you and us.
+        surrounding districts, including office plant rental, vertical gardens, landscaping, garden
+        maintenance, terrace gardening and gift plants. A signed quote, a countersigned rental plan
+        or a written confirmation by email or WhatsApp forms the contract between you and us.
       </p>
 
-      <h2>Site visits and quotes</h2>
+      <h2>Walk-throughs and quotes</h2>
       <ul>
-        <li>Site visits are chargeable. The call-out charge is confirmed when you book, and visits beyond 40 km from the city centre may carry an additional travel charge, agreed in advance.</li>
+        <li>Site visits and rental walk-throughs are chargeable. The call-out charge is confirmed when you book, and visits beyond 40 km from the city centre may carry an additional travel charge, agreed in advance.</li>
+        <li>Rental is quoted on request. Plans are priced after a walk-through, against the number of plants, the planters chosen and the size of the space. We do not publish a price list.</li>
         <li>Quotes are valid for 30 days. Plant prices are subject to seasonal availability; substitutes of equal value are proposed if a listed plant is unavailable.</li>
         <li>Design fees, where charged, are adjusted against the project value if you proceed within 60 days.</li>
       </ul>
@@ -29,7 +30,8 @@ export default function TermsPage() {
       <h2>Payment</h2>
       <ul>
         <li>Installation projects: 50% advance to schedule, 40% on delivery of materials and plants, 10% on handover.</li>
-        <li>Maintenance and plant rental plans: billed monthly in advance, minimum three-month term.</li>
+        <li>Plant rental plans: billed in advance for the plan cycle you choose — monthly, quarterly or annual. The first invoice is raised on installation.</li>
+        <li>Maintenance plans: billed monthly in advance, minimum three-month term.</li>
         <li>Gift plant orders: 50% advance to confirm the order, balance before dispatch. Minimum order 50 pieces.</li>
         <li>Payments are accepted by UPI, bank transfer, card or cash. GST is charged as applicable.</li>
       </ul>
@@ -48,12 +50,17 @@ export default function TermsPage() {
         <li>Irrigation systems carry a one-year workmanship warranty. Hardscape carries a one-year warranty on workmanship; material warranties are as provided by the manufacturer.</li>
       </ul>
 
-      <h2>Plant rental</h2>
-      <p>
-        Plants and planters on rental remain our property. You agree not to move them off-site or
-        re-pot them. Damage beyond normal wear is charged at replacement cost. Either party may end a
-        plan after the minimum term with 30 days’ written notice.
-      </p>
+      <h2>Plant rental plans</h2>
+      <ul>
+        <li>Plants and planters supplied on rental remain our property throughout the plan and are returned to us when it ends. You agree not to move them off-site, re-pot them or apply treatments to them.</li>
+        <li>Term. A monthly plan runs month to month. Quarterly and annual plans run for their cycle and renew automatically unless either party gives notice.</li>
+        <li>Notice. Either party may end a plan with 30 days’ written notice, effective at the end of the current cycle. Fees for the notice period are payable.</li>
+        <li>Replacement. Any plant that declines in normal indoor use is replaced free, for the life of the plan, at the next scheduled visit. This is our cost, not yours.</li>
+        <li>What replacement does not cover: plants damaged by building work, pest infestations introduced from elsewhere, loss of power or air conditioning for extended periods, water damage, relocation by anyone other than us, theft, vandalism or deliberate damage. In those cases the plant is charged at replacement cost.</li>
+        <li>Access. We need access to the plants during your working hours on the agreed weekly slot. Visits we cannot complete because access was not available are treated as delivered.</li>
+        <li>Changes. Adding, removing or swapping plants takes effect from the next cycle and is re-quoted on the same basis as the original plan.</li>
+        <li>End of term. We collect the plants and planters within 7 working days of the plan ending. Items not returned in a condition consistent with normal wear are charged at replacement cost.</li>
+      </ul>
 
       <h2>Cancellation and refunds</h2>
       <p>

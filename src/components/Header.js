@@ -52,7 +52,7 @@ export default function Header() {
               {site.phoneDisplay}
             </a>
             <Link href="/contact" className="btn btn--primary header__cta">
-              Book a site visit
+              Get a proposal
             </Link>
             <button
               type="button"
@@ -103,7 +103,7 @@ export default function Header() {
           </ul>
           <div className="header__drawer-actions">
             <Link href="/contact" className="btn btn--primary btn--block" onClick={() => setOpen(false)}>
-              Book a site visit
+              Get a proposal
             </Link>
             <a href={site.phoneHref} className="btn btn--outline btn--block">
               <PhoneIcon className="btn__icon" />

@@ -141,7 +141,7 @@ export default function ContactForm({ defaultService = "", compact = false, sour
       )}
 
       <button type="submit" className="btn btn--primary btn--lg" disabled={pending}>
-        {pending ? "Sending" : "Request a site visit"}
+        {pending ? "Sending" : "Send enquiry"}
       </button>
       <p className="form__hint">
         We reply the same working day. Your details are used only to contact you about your enquiry.

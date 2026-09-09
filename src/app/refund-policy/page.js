@@ -3,13 +3,23 @@ import { site } from "@/lib/site";
 import { buildMetadata } from "@/lib/seo";
 
 const title = "Refund and cancellation policy";
-const description = `How cancellations, rescheduling and refunds work for ${site.name} garden installations, maintenance plans, plant rental and gift plant orders in Chennai.`;
+const description = `How cancellations, rescheduling and refunds work for ${site.name} office plant rental plans, garden installations, maintenance plans and gift plant orders in Chennai.`;
 
 export const metadata = buildMetadata({ title, description, path: "/refund-policy" });
 
 export default function RefundPolicyPage() {
   return (
     <PolicyPage path="/refund-policy" title={title} description={description} updated="8 September 2026">
+      <h2>Office plant rental plans</h2>
+      <ul>
+        <li>A monthly plan runs month to month. Quarterly and annual plans run for their cycle and renew unless notice is given.</li>
+        <li>Cancel with 30 days’ written notice, effective at the end of the current cycle. Fees for the notice period are payable; any cycle paid in advance beyond that is refunded pro rata.</li>
+        <li>We collect the plants and planters within 7 working days of the plan ending. Items not returned in a condition consistent with normal wear are charged at replacement cost.</li>
+        <li>Plants that decline in normal indoor use are replaced free. Replacement is not a refund event, and no credit is issued for a replaced plant.</li>
+        <li>A missed maintenance visit by us is made up within 7 days or credited to the next invoice. A visit we cannot complete because access was not available is treated as delivered.</li>
+        <li>Event and short-term rentals cancelled more than 72 hours before the event are refunded in full. Within 72 hours, 50% is charged.</li>
+      </ul>
+
       <h2>Installation projects</h2>
       <p>Applies to vertical gardens, landscaping and terrace gardens.</p>
       <ul>
@@ -25,13 +35,6 @@ export default function RefundPolicyPage() {
         <li>Fees for the notice period are payable. Any month paid in advance beyond the notice period is refunded.</li>
         <li>A missed visit by us is made up within 7 days or credited to the next invoice.</li>
         <li>A visit cancelled by you with less than 24 hours’ notice is charged.</li>
-      </ul>
-
-      <h2>Plant rental</h2>
-      <ul>
-        <li>Three-month minimum term. Cancel with 30 days’ notice after that; we collect plants and planters on the last day.</li>
-        <li>Event rentals cancelled more than 72 hours before the event are refunded in full. Within 72 hours, 50% is charged.</li>
-        <li>Plants that decline in normal use are replaced free; this is not a refund event.</li>
       </ul>
 
       <h2>Gift plant orders</h2>

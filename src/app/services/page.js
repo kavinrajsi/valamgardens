@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Button from "@/components/Button";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Reveal from "@/components/motion/Reveal";
@@ -6,20 +7,25 @@ import Stagger from "@/components/motion/Stagger";
 import SplitHeading from "@/components/motion/SplitHeading";
 import Pin from "@/components/motion/Pin";
 import ServiceCard from "@/components/ServiceCard";
+import SectionHeading from "@/components/SectionHeading";
+import Checklist from "@/components/Checklist";
 import ProcessSteps from "@/components/ProcessSteps";
 import Faq from "@/components/Faq";
 import CtaBand from "@/components/CtaBand";
 import JsonLd from "@/components/JsonLd";
 import { site } from "@/lib/site";
-import { services, generalFaqs } from "@/lib/services";
+import { services, generalFaqs, getService } from "@/lib/services";
 import { buildMetadata } from "@/lib/seo";
 import { graph, webPageSchema, breadcrumbSchema, servicesListSchema, faqSchema } from "@/lib/schema";
 
-const title = "Garden services in Chennai";
+const title = "Office plant rental and garden services in Chennai";
 const description =
-  "Vertical gardens, landscaping, garden maintenance, terrace gardening, plant rental and bulk gift plants in Chennai. Indicative prices, what is included and how to book a site visit.";
+  "Fully managed office plant rental in Chennai, plus vertical gardens, landscaping, garden maintenance, terrace gardening and bulk gift plants. What each service includes and how to get a proposal.";
 
 export const metadata = buildMetadata({ title, description, path: "/services" });
+
+const flagship = getService("plant-rental");
+const others = services.filter((s) => s.slug !== flagship.slug);
 
 const crumbs = [
   { href: "/", label: "Home" },
@@ -27,11 +33,11 @@ const crumbs = [
 ];
 
 const picker = [
-  { need: "I have a blank wall or balcony and no floor space", pick: "vertical-garden" },
-  { need: "I have a plot, yard or lawn to design or redo", pick: "landscaping" },
-  { need: "I have a garden that needs regular care", pick: "garden-maintenance" },
-  { need: "I have an empty terrace and want to grow food", pick: "terrace-gardening" },
-  { need: "I want plants in my office without owning them", pick: "plant-rental" },
+  { need: "I want plants in my office without owning or watering them", pick: "plant-rental" },
+  { need: "I have planted areas that need someone on a regular schedule", pick: "garden-maintenance" },
+  { need: "I have a blank wall or lobby and no floor space", pick: "vertical-garden" },
+  { need: "I have grounds, a yard or a lawn to design or redo", pick: "landscaping" },
+  { need: "I have an empty terrace and want to use it", pick: "terrace-gardening" },
   { need: "I need 50 or more plants as gifts for an event", pick: "gift-plants" },
 ];
 
@@ -53,16 +59,16 @@ export default function ServicesPage() {
           <div className="row">
             <Reveal className="col-12 col-lg-8">
               <SplitHeading as="h1" id="services-title" className="page-hero__title page-hero__title--display">
-                Six services. One team.
+                Rental first. Everything else too.
               </SplitHeading>
               <p className="page-hero__lead">
-                Everything below is designed, installed and maintained by {site.name} staff, not
-                subcontracted. Prices are indicative; every job gets a written quote after a site
-                visit.
+                Office plant rental is what most clients start with, and the rest of what we do sits
+                behind it. Everything below is designed, installed and maintained by {site.name}{" "}
+                staff, not subcontracted, and every job is quoted after a walk-through.
               </p>
               <div className="btn-group page-hero__actions">
                 <Button href="/contact" size="lg">
-                  Book a site visit
+                  Get a proposal
                 </Button>
                 <Button href={site.phoneHref} variant="outline" size="lg">
                   Call {site.phoneDisplay}
@@ -73,12 +79,50 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="section section--line-top" aria-label="Service list">
+      <section className="section section--line-top" aria-labelledby="flagship-title">
         <div className="container">
+          <div className="row row--gy-lg row--align-center">
+            <Reveal className="col-12 col-lg-6">
+              <p className="eyebrow">Our flagship service</p>
+              <SplitHeading as="h2" id="flagship-title" style={{ marginBottom: "1rem" }}>
+                {flagship.name}
+              </SplitHeading>
+              <p className="lead" style={{ marginBottom: "1.5rem" }}>
+                {flagship.summary}
+              </p>
+              <Checklist items={flagship.included.slice(0, 4)} />
+              <div className="btn-group" style={{ marginTop: "2rem" }}>
+                <Button href={`/services/${flagship.slug}`}>How rental works</Button>
+                <Button href="/contact" variant="outline">
+                  Get a proposal
+                </Button>
+              </div>
+            </Reveal>
+            <Reveal className="col-12 col-lg-6" delay={0.1}>
+              <div className="media media--4x3">
+                <Image
+                  src={flagship.image}
+                  alt={flagship.imageAlt}
+                  fill
+                  sizes="(min-width: 992px) 45vw, 92vw"
+                />
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      <section className="section" aria-labelledby="others-title">
+        <div className="container">
+          <SectionHeading
+            id="others-title"
+            title="The rest of what we do"
+            lead="Design and build work for offices, campuses and homes across Chennai."
+          />
           <Stagger className="row row--gy-lg">
-            {services.map((s) => (
+            {others.map((s) => (
               <div className="col-12 col-sm-6 col-lg-4" key={s.slug}>
-                <ServiceCard service={s} headingLevel="h2" />
+                <ServiceCard service={s} headingLevel="h3" />
               </div>
             ))}
           </Stagger>
@@ -125,7 +169,7 @@ export default function ServicesPage() {
         <div className="container">
           <div className="row row--gy-lg">
             <Pin className="col-12 col-lg-4">
-              <SplitHeading id="services-process-title">How every project runs</SplitHeading>
+              <SplitHeading id="services-process-title">How every engagement runs</SplitHeading>
             </Pin>
             <Stagger className="col-12 col-lg-8" select=".step">
               <ProcessSteps />

@@ -14,9 +14,9 @@ export default function Footer() {
               <Image src="/logo-light.svg" alt={site.name} width={130} height={62} />
             </Link>
             <p className="footer__about">
-              {site.name} designs, builds and maintains gardens across Chennai. Vertical gardens,
-              landscaping, terrace gardens, maintenance plans, office plant rental and bulk gift
-              plants.
+              {site.name} rents indoor plants to offices across Chennai on a fully managed plan:
+              installed, maintained weekly and replaced free. We also build vertical gardens,
+              landscapes, terrace gardens and bulk gift plants.
             </p>
           </div>
           <div className="col-6 col-md-3 col-lg-2">

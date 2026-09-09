@@ -4,8 +4,8 @@ import { PhoneIcon } from "./Icons";
 import Reveal from "./motion/Reveal";
 
 export default function CtaBand({
-  title = "Start with a site visit.",
-  text = "A gardener comes to you, measures and listens, and you get a written quote within three working days.",
+  title = "Grow your space.",
+  text = "Tell us how much of your office you want planted. We walk the floor, plan it against your light and layout, and send a proposal with your plan priced out.",
 }) {
   return (
     <section className="cta-band" aria-labelledby="cta-band-title">
@@ -18,7 +18,7 @@ export default function CtaBand({
           <p className="cta-band__text">{text}</p>
           <div className="btn-group" style={{ justifyContent: "center" }}>
             <Button href="/contact" variant="secondary" size="lg">
-              Book a site visit
+              Get a proposal
             </Button>
             <Button href={site.phoneHref} variant="outline" size="lg">
               <PhoneIcon className="btn__icon" />

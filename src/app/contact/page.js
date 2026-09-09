@@ -11,7 +11,7 @@ import { buildMetadata } from "@/lib/seo";
 import { graph, webPageSchema, breadcrumbSchema, faqSchema } from "@/lib/schema";
 
 const title = "Contact";
-const description = `Book a garden site visit in Chennai. Call or WhatsApp ${site.phoneDisplay}, email ${site.email}, or send the form. We reply the same working day.`;
+const description = `Get a proposal for office plant rental in Chennai. Call or WhatsApp ${site.phoneDisplay}, email ${site.email}, or send the form. We reply the same working day.`;
 
 export const metadata = buildMetadata({ title, description, path: "/contact" });
 
@@ -39,8 +39,9 @@ export default function ContactPage() {
                 Let’s look at your space.
               </SplitHeading>
               <p className="page-hero__lead">
-                Send a few details or call. A gardener visits within 48 hours, and you get a
-                written quote within three working days.
+                Tell us how much of your office you want planted — one floor, a reception, a whole
+                campus — and we will arrange a walk-through and send a proposal with your plan
+                priced out. Home gardens are welcome here too.
               </p>
             </Reveal>
           </div>

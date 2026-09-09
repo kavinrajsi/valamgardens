@@ -15,7 +15,7 @@ export default function ServiceCard({ service, headingLevel = "h3" }) {
       </div>
       <Tag className="service-card__title">{service.name}</Tag>
       <p className="service-card__text">{service.short}</p>
-      {service.slug === "gift-plants" && <p className="service-card__note">Minimum order 50 pieces</p>}
+      {service.note && <p className="service-card__note">{service.note}</p>}
     </Link>
   );
 }

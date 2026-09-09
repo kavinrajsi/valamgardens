@@ -18,26 +18,22 @@ import Pin from "@/components/motion/Pin";
 import HeroIntro from "@/components/motion/HeroIntro";
 import { PhoneIcon } from "@/components/Icons";
 import { site, unsplash } from "@/lib/site";
-import { services, generalFaqs, reasons } from "@/lib/services";
+import { services, generalFaqs } from "@/lib/services";
+import { audienceSegments, rentalPillars } from "@/lib/rental";
+import Plans from "@/components/Plans";
+import CompareTable from "@/components/CompareTable";
 import { buildMetadata } from "@/lib/seo";
 import { graph, webPageSchema, faqSchema, servicesListSchema } from "@/lib/schema";
 
 const description =
-  "Valam Gardens builds and maintains gardens in Chennai: vertical gardens, landscaping, terrace gardens, maintenance plans, office plant rental and bulk gift plants. Site visit within 48 hours, written quote in 3 days.";
+  "Rent indoor plants for your Chennai office on a fully managed plan: installation, weekly maintenance and free replacement of any plant that dies, with no capital outlay. Monthly, quarterly and annual plans.";
 
 export const metadata = buildMetadata({
   title: site.name,
   description,
   path: "/",
-  keywords: ["garden design Chennai", "gardener near me Chennai", "green wall Chennai"],
+  keywords: ["office plant rental Chennai", "indoor plants for office Chennai", "plant rental services Chennai"],
 });
-
-const projects = [
-  { id: "1557429287-b2e26467fc2b", alt: "Cottage-style garden with flowering beds in front of a house", caption: "Front garden, independent house" },
-  { id: "1558904541-efa843a96f01", alt: "Freshly laid lawn beside a modern building", caption: "Lawn and edging, apartment common area" },
-  { id: "1598902108854-10e335adac99", alt: "Shaded garden path with potted plants and roses", caption: "Shade garden, villa backyard" },
-  { id: "1591857177580-dc82b9ac4e1e", alt: "Raised timber beds planted with vegetables on a rooftop", caption: "Kitchen garden, terrace" },
-];
 
 export default function HomePage() {
   return (
@@ -55,15 +51,16 @@ export default function HomePage() {
           <HeroIntro className="row hero__grid">
             <div className="col-12 col-lg-6 hero__copy">
               <SplitHeading as="h1" id="hero-title" className="hero__title">
-                Gardens that survive Chennai summers.
+                Grow your space.
               </SplitHeading>
               <p className="hero__lead">
-                Vertical gardens, landscaping, terrace gardens and maintenance plans, designed for
-                this city’s heat and hard water. One team from the first sketch to the monthly visit.
+                Office plant rental in Chennai, fully managed. We install the plants, maintain them
+                every week and replace anything that dies, free. You never buy a plant, and nobody
+                on your team has to water one.
               </p>
               <div className="hero__actions">
                 <Button href="/contact" size="lg">
-                  Book a site visit
+                  Get a proposal
                 </Button>
                 <Button href={site.phoneHref} variant="outline" size="lg">
                   <PhoneIcon className="btn__icon" />
@@ -71,16 +68,24 @@ export default function HomePage() {
                 </Button>
               </div>
               <p className="hero__note">
-                Written quote within 3 working days. Or <a href={site.whatsappHref} target="_blank" rel="noopener noreferrer">message us on WhatsApp</a>.
+                Monthly, quarterly and annual plans, priced after a walk-through. Or{" "}
+                <a href={site.whatsappHref} target="_blank" rel="noopener noreferrer">message us on WhatsApp</a>.
               </p>
+              <ul className="audience" aria-label="Who we plant for">
+                {audienceSegments.secondary.map((item) => (
+                  <li className="audience__item" key={item}>
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
             <div className="col-12 col-lg-6">
               <div className="hero__visual">
                 <div className="hero__ground" aria-hidden="true" data-speed="1.06" />
                 <div className="hero__media">
                   <Image
-                    src={unsplash("1585320806297-9794b3e4eeae", 1000, 1333)}
-                    alt="Brick garden path lined with clipped hedges and roses, designed and planted by Valam Gardens"
+                    src={unsplash("1592150621744-aca64f48394a", 1000, 1333)}
+                    alt="Indoor plants in white planters lit by pendant lights in an office interior"
                     fill
                     preload
                     fetchPriority="high"
@@ -88,7 +93,7 @@ export default function HomePage() {
                     data-speed="auto"
                   />
                 </div>
-                <p className="hero__caption">Founded in Chennai, 2025. Site visit in 48 hours, written quote in 3 days</p>
+                <p className="hero__caption">Founded in Chennai, 2025. Plants installed, maintained weekly and replaced free</p>
               </div>
             </div>
           </HeroIntro>
@@ -99,46 +104,54 @@ export default function HomePage() {
         <TrustStrip />
       </Stagger>
 
-      <section className="section" aria-labelledby="services-title">
+      <section className="section" aria-labelledby="compare-title">
         <div className="container">
           <SectionHeading
-            id="services-title"
-            title="Six things we do well"
-            lead="Every service is designed, installed and maintained by the same team, so nothing is lost between contractors."
+            id="compare-title"
+            title="Why rent instead of buy"
+            lead="Owning office plants means capital, upkeep and the cost of replacing whatever dies. Renting moves all three onto us."
             row
             action={
-              <Link href="/services" className="btn btn--ghost">
-                See all services and prices
+              <Link href="/services/plant-rental" className="btn btn--ghost">
+                How rental works
               </Link>
             }
           />
-          <Stagger className="row row--gy-lg">
-            {services.map((s) => (
-              <div className="col-12 col-sm-6 col-lg-4" key={s.slug}>
-                <ServiceCard service={s} />
-              </div>
-            ))}
-          </Stagger>
+          <Reveal>
+            <CompareTable />
+          </Reveal>
         </div>
       </section>
 
-      <section className="section section--soft" aria-labelledby="why-title">
+      <section className="section section--soft" aria-labelledby="included-title">
         <div className="container">
           <div className="row row--gy-lg row--align-center">
-            <Reveal className="col-12 col-lg-5">
-              <SplitHeading id="why-title" style={{ marginBottom: "1rem" }}>
-                Why homeowners and offices in Chennai call us
+            <Reveal className="col-12 col-lg-4">
+              <SplitHeading id="included-title" style={{ marginBottom: "1rem" }}>
+                What every plan covers
               </SplitHeading>
               <p className="lead">
-                {site.name} is a Chennai garden company. We plan for 40-degree Mays, salty bore
-                water and monsoon drainage, then stay on to keep the garden the way it looked on
-                handover day.
+                One team handles the whole thing, from the first walk-through to the plant we swap
+                out next Tuesday. There is nothing for your facilities team to schedule.
               </p>
             </Reveal>
-            <Stagger className="col-12 col-lg-7" select=".feature">
-              <Features items={reasons} />
+            <Stagger className="col-12 col-lg-8" select=".feature">
+              <Features items={rentalPillars} />
             </Stagger>
           </div>
+        </div>
+      </section>
+
+      <section className="section" aria-labelledby="plans-title">
+        <div className="container">
+          <SectionHeading
+            id="plans-title"
+            title="Plans"
+            lead="Pick the cadence that suits your office. Every plan includes installation, weekly maintenance and free replacement — the difference is the billing cycle and how far the styling and account support go."
+          />
+          <Stagger select=".plan">
+            <Plans />
+          </Stagger>
         </div>
       </section>
 
@@ -147,10 +160,10 @@ export default function HomePage() {
           <div className="row row--gy-lg">
             <Reveal className="col-12 col-lg-5">
               <SplitHeading id="process-title" style={{ marginBottom: "1rem" }}>
-                From first call to finished garden
+                From first call to planted floor
               </SplitHeading>
               <p className="lead" style={{ marginBottom: "2rem" }}>
-                Three steps, from the first call to handover.
+                Three steps, and the third one never really ends.
               </p>
               <ProcessSteps />
             </Reveal>
@@ -158,7 +171,7 @@ export default function HomePage() {
               <div className="media media--3x4">
                 <Image
                   src={unsplash("1530836369250-ef72a3f5cda8", 900, 1200)}
-                  alt="Gardener planting seedlings into a tray of soil"
+                  alt="Hands potting a young plant into fresh soil"
                   fill
                   sizes="(min-width: 992px) 45vw, 92vw"
                 />
@@ -168,31 +181,34 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section section--line-top" aria-labelledby="projects-title">
+      <section className="section section--line-top" aria-labelledby="beyond-title">
         <div className="container">
           <SectionHeading
-            id="projects-title"
-            title="Recent work"
-            lead="Front yards, apartment lawns, shaded backyards and rooftops across the city."
+            id="beyond-title"
+            title="Beyond rental"
+            lead="The same team designs and builds green walls, landscapes, terrace gardens and maintenance plans — for offices and campuses, and for homes across Chennai."
+            row
+            action={
+              <Link href="/services" className="btn btn--ghost">
+                See all services and prices
+              </Link>
+            }
           />
-          <Stagger className="row row--gy">
-            {projects.map((p) => (
-              <div className="col-6 col-lg-3" key={p.id}>
-                <figure className="gallery">
-                  <div className="media media--1x1">
-                    <Image src={unsplash(p.id, 700, 700)} alt={p.alt} fill sizes="(min-width: 992px) 22vw, 45vw" data-speed="auto" />
-                  </div>
-                  <figcaption className="gallery__caption">{p.caption}</figcaption>
-                </figure>
-              </div>
-            ))}
+          <Stagger className="row row--gy-lg">
+            {services
+              .filter((s) => s.slug !== "plant-rental")
+              .map((s) => (
+                <div className="col-12 col-sm-6 col-lg-4" key={s.slug}>
+                  <ServiceCard service={s} />
+                </div>
+              ))}
           </Stagger>
         </div>
       </section>
 
       <section className="section section--soft" aria-labelledby="testimonials-title">
         <div className="container">
-          <SectionHeading id="testimonials-title" title="What clients say" />
+          <SectionHeading id="testimonials-title" title="What clients say" lead="Placeholder quotes pending real client sign-off." />
           <Stagger select=".quote">
             <Testimonials />
           </Stagger>
@@ -226,8 +242,8 @@ export default function HomePage() {
                 Tell us about your space
               </SplitHeading>
               <p className="lead">
-                A balcony, a compound wall, a rooftop, an office floor. Send a few details and we
-                will call to fix a site visit.
+                One floor, a reception, a whole campus — or a home. Send a few details and we will
+                call the same working day to arrange a walk-through.
               </p>
             </Reveal>
             <Reveal className="col-12 col-lg-7" delay={0.1}>
@@ -237,7 +253,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <CtaBand />
+      <CtaBand title="Ready to plant your office?" />
     </>
   );
 }

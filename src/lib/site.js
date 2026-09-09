@@ -3,15 +3,15 @@ export const site = {
   legalName: "Valam Gardens",
   domain: "valamgardens.com",
   url: "https://valamgardens.com",
-  tagline: "Gardens designed, built and cared for in Chennai",
+  tagline: "Office plant rental in Chennai, fully managed",
   description:
-    "Valam Gardens designs, installs and maintains gardens across Chennai. Vertical gardens, landscaping, terrace gardens, garden maintenance, plant rental for offices and bulk gift plants.",
+    "Valam Gardens rents indoor plants to offices across Chennai on a fully managed plan: installation, weekly maintenance and free replacement, with no capital outlay. We also design and build vertical gardens, landscapes, terrace gardens and bulk gift plants.",
   email: "hello@valamgardens.com",
   phone: "+91 9025083535",
   phoneHref: "tel:+919025083535",
   phoneDisplay: "+91 90250 83535",
   whatsappHref:
-    "https://wa.me/919025083535?text=Hi%20Valam%20Gardens%2C%20I%27d%20like%20a%20free%20site%20visit.",
+    "https://wa.me/919025083535?text=Hi%20Valam%20Gardens%2C%20I%27d%20like%20a%20quote%20for%20office%20plant%20rental.",
   address: {
     streetAddress: "Chennai",
     addressLocality: "Chennai",

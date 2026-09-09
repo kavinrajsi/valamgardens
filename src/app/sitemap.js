@@ -19,7 +19,8 @@ export default function sitemap() {
       url: absoluteUrl(`/services/${s.slug}`),
       lastModified,
       changeFrequency: "monthly",
-      priority: 0.9,
+      /* Plant rental is the flagship, so it outranks the other five. */
+      priority: s.slug === "plant-rental" ? 0.95 : 0.8,
       images: [s.image],
     })),
   ];

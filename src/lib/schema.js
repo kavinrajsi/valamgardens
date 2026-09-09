@@ -41,7 +41,7 @@ export function organizationSchema() {
     knowsAbout: services.map((s) => s.name),
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "Garden services",
+      name: "Office plant rental and garden services",
       itemListElement: services.map((s) => ({
         "@type": "Offer",
         itemOffered: { "@type": "Service", "@id": `${absoluteUrl(`/services/${s.slug}`)}#service`, name: s.name },
@@ -123,14 +123,11 @@ export function serviceSchema(service) {
       serviceUrl: absoluteUrl("/contact"),
       servicePhone: site.phone,
     },
+    /* Price is on request across the board, so no priceSpecification is
+       emitted. `pricingNote` is prose about how quoting works, not a figure,
+       and publishing it as a price would misrepresent it. */
     offers: {
       "@type": "Offer",
-      priceCurrency: "INR",
-      priceSpecification: {
-        "@type": "PriceSpecification",
-        priceCurrency: "INR",
-        description: service.pricingNote,
-      },
       availability: "https://schema.org/InStock",
       url,
     },
@@ -142,7 +139,7 @@ export function servicesListSchema() {
   return {
     "@type": "ItemList",
     "@id": `${absoluteUrl("/services")}#list`,
-    name: "Garden services in Chennai by Valam Gardens",
+    name: "Office plant rental and garden services in Chennai by Valam Gardens",
     itemListElement: services.map((s, i) => ({
       "@type": "ListItem",
       position: i + 1,

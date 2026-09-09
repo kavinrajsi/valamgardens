@@ -57,16 +57,15 @@ export default async function Image() {
               marginTop: 24,
               fontSize: 76,
               fontWeight: 900,
-              fontStyle: "italic",
               lineHeight: 1,
               color: "#222",
               display: "flex",
             }}
           >
-            Gardens that survive Chennai summers.
+            Grow your space.
           </div>
           <div style={{ marginTop: 32, fontSize: 28, color: "#555", fontFamily: "Arial, sans-serif", display: "flex" }}>
-            Site visit in 48 hours. {site.phoneDisplay}. {site.domain}
+            Office plant rental in Chennai. {site.phoneDisplay}. {site.domain}
           </div>
         </div>
       </div>
