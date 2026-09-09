@@ -19,6 +19,31 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   padding-bottom: var(--mobile-bar-height);
+  /* Lining, tabular figures everywhere: digits sit on the cap line and every
+     digit takes the same advance width, so prices, phone numbers and step
+     numbers align instead of shuffling.
+
+     "tnum" is listed alongside "lnum" deliberately. font-feature-settings
+     overrides font-variant-numeric for the features it names, so setting
+     "lnum" alone would switch tabular figures back off. */
+  font-feature-settings: "lnum" 1, "tnum" 1;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+/* reset.css sets `font: inherit` on most elements, and the font shorthand
+   resets font-feature-settings and font-variant-* to their initial values —
+   which would drop the figures above on nearly every element on the page.
+   Re-declaring inherit restores the chain. Form controls are named because
+   the browser's own stylesheet resets them too. */
+*,
+*::before,
+*::after,
+input,
+select,
+textarea,
+button {
+  font-feature-settings: inherit;
+  font-variant-numeric: inherit;
 }
 
 @media (min-width: 992px) {
