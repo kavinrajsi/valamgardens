@@ -583,8 +583,11 @@
 .step {
   counter-increment: step;
   display: grid;
-  grid-template-columns: 3.5rem 1fr;
-  gap: 1rem;
+  /* The numeral column sizes to the numeral, not to a guessed 3.5rem. That
+     reserved 56px for a glyph that inks 16px, leaving a 72px indent before
+     the text. */
+  grid-template-columns: auto 1fr;
+  gap: 0.875rem;
   align-items: start;
 }
 .step__num {
@@ -593,6 +596,11 @@
   font-size: var(--text-3xl);
   line-height: 1;
   color: var(--color-primary);
+  /* Playfair's digits are not equal width and the face carries no tabular
+     figures, so each step would otherwise start its text at a different x.
+     em resolves against this element's own --text-3xl, so the floor tracks
+     the type scale across breakpoints without repeating its values. */
+  min-width: 0.62em;
 }
 .step__num::before {
   content: counter(step);
