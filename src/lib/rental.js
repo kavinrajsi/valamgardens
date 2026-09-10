@@ -37,9 +37,7 @@ export const plans = [
     bestFor: "Settled offices that want fewer invoices and a seasonal refresh.",
     includes: [
       "Everything in Monthly",
-      "Seasonal refresh at the start of each quarter",
       "Priority scheduling for moves and reconfigurations",
-      "One styling review a quarter",
     ],
     note: "Our most-taken plan for single-office clients.",
     featured: true,
@@ -75,11 +73,6 @@ export const rentVsBuy = [
     aspect: "When a plant dies",
     buying: "You buy a replacement, and you notice too late.",
     renting: "We spot it first and replace it free. You never pay for a plant twice.",
-  },
-  {
-    aspect: "Changing the look",
-    buying: "You are stuck with what you bought, or you buy again.",
-    renting: "Swap plants and planters as the office changes, at no extra cost.",
   },
   {
     aspect: "On the books",

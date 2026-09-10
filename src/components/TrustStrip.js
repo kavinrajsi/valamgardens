@@ -4,7 +4,7 @@ const items = [
   { icon: LeafIcon, text: "No capital outlay, one monthly plan" },
   { icon: ClockIcon, text: "Weekly maintenance visits, included" },
   { icon: CheckIcon, text: "Free replacement of any plant that declines" },
-  { icon: PinIcon, text: "Serving all of Chennai and nearby districts" },
+  { icon: PinIcon, text: "Serving in Chennai" },
 ];
 
 export default function TrustStrip() {

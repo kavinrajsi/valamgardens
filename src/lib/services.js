@@ -75,7 +75,6 @@ export const services = [
       "Lawn mowing, edging, weeding and seasonal top dressing",
       "Organic feeding schedule and soil conditioning",
       "Pest and disease monitoring with treatment",
-      "Irrigation check and repair, pot and planter care",
       "Replacement of failed plants under the plan",
     ],
     forWhom: [
@@ -294,7 +293,7 @@ export const services = [
       },
       {
         q: "Do you deliver outside Chennai?",
-        a: "We deliver across Chennai and to Kanchipuram, Chengalpattu and Tiruvallur districts. For other cities we ship boxed succulents by courier.",
+        a: "We deliver across Chennai. For other cities we ship boxed succulents by courier.",
       },
     ],
     related: ["plant-rental", "vertical-garden", "terrace-gardening"],
@@ -328,7 +327,7 @@ export const generalFaqs = [
   },
   {
     q: "Can you cover several offices or cities?",
-    a: "Across Chennai and its suburbs, yes, on a single contract with one invoice and one point of contact. For farmhouses and larger project work we travel across Kanchipuram, Chengalpattu and Tiruvallur districts.",
+    a: "Across Chennai and its suburbs, yes, on a single contract with one invoice and one point of contact.",
   },
   {
     q: "Do you still design and build gardens?",
@@ -404,7 +403,7 @@ export const reasons = [
 ];
 
 export const stats = [
-  { value: "2025", label: "founded in Chennai" },
+  { value: "2024", label: "founded in Chennai" },
   { value: "Weekly", label: "maintenance visits, included" },
   { value: "Zero", label: "cost to replace a plant that dies" },
 ];

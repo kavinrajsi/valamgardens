@@ -72,6 +72,15 @@
   color: var(--color-primary-dark);
 }
 
+.btn--desktop-only {
+  display: none;
+}
+@media (min-width: 768px) {
+  .btn--desktop-only {
+    display: inline-flex;
+  }
+}
+
 .btn--lg {
   min-height: 3.5rem;
   padding: 0 2rem;

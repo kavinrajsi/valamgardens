@@ -59,7 +59,7 @@ export const site = {
     instagram: "https://www.instagram.com/valamgardens",
     facebook: "https://www.facebook.com/valamgardens",
   },
-  founded: "2025",
+  founded: "2024",
 };
 
 export const nav = [

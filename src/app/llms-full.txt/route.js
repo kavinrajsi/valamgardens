@@ -23,7 +23,7 @@ export function GET() {
   lines.push(`- Phone and WhatsApp: ${site.phoneDisplay}`);
   lines.push(`- Email: ${site.email}`);
   lines.push(`- Hours: ${site.hours}`);
-  lines.push(`- Service area: all of Chennai (${site.areasServed.join(", ")}) plus Kanchipuram, Chengalpattu and Tiruvallur districts.`);
+  lines.push(`- Service area: all of Chennai (${site.areasServed.join(", ")}).`);
   lines.push("- Flagship service: fully managed office plant rental. Plants and planters are supplied on a subscription, installed, maintained weekly and replaced free if they decline. The plants remain the property of Valam Gardens.");
   lines.push("- Pricing: on request for every service. Rental runs on named monthly, quarterly and annual plans, quoted after a walk-through. No public price list.");
   lines.push("- Site visits and walk-throughs are chargeable; the call-out charge is confirmed when booking.");

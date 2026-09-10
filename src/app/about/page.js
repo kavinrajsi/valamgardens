@@ -18,7 +18,7 @@ import { graph, webPageSchema, breadcrumbSchema } from "@/lib/schema";
 
 const title = "About";
 const description =
-  "Valam Gardens rents and maintains indoor plants for offices across Chennai, and designs and builds gardens. Founded in 2025. Valam is Tamil for to thrive — that is the whole idea.";
+  "Valam Gardens rents and maintains indoor plants for offices across Chennai, and designs and builds gardens. Founded in 2024. Valam is Tamil for to thrive — that is the whole idea.";
 
 export const metadata = buildMetadata({ title, description, path: "/about" });
 
@@ -65,7 +65,7 @@ export default function AboutPage() {
                 Valam means to thrive.
               </SplitHeading>
               <p className="page-hero__lead">
-                Every office wants plants. Almost none wants to own them. So since 2025 we have
+                Every office wants plants. Almost none wants to own them. So since 2024 we have
                 rented them instead — installed, maintained, replaced.
               </p>
               <div className="btn-group page-hero__actions">
@@ -152,8 +152,7 @@ export default function AboutPage() {
                 Where we work
               </SplitHeading>
               <p className="lead" style={{ marginBottom: "1.5rem" }}>
-                All of Chennai, plus Kanchipuram, Chengalpattu and Tiruvallur districts for
-                farmhouses and larger sites.
+                All of Chennai.
               </p>
               <ul className="tags" aria-label="Neighbourhoods served">
                 {site.areasServed.map((a) => (

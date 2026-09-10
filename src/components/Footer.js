@@ -49,7 +49,7 @@ export default function Footer() {
               <a href={site.phoneHref}>{site.phoneDisplay}</a>
               <a href={`mailto:${site.email}`}>{site.email}</a>
               <span>{site.hours}</span>
-              <span>Serving all of Chennai and nearby districts</span>
+              <span>Serving in Chennai</span>
             </address>
           </div>
         </div>

@@ -23,7 +23,7 @@ export function GET() {
   lines.push(`- Flagship service: ${flagship.name.toLowerCase()}. ${flagship.summary}`);
   lines.push("- Rental model: the plants and planters stay the property of Valam Gardens. Clients pay a recurring fee that covers installation, a weekly maintenance visit and free replacement of any plant that declines. No capital outlay.");
   lines.push(`- Rental plans: ${plans.map((p) => p.name.toLowerCase()).join(", ")}. Price is on request for every plan and every service; quoted after a walk-through. There is no public price list.`);
-  lines.push(`- Location and service area: Chennai city and suburbs (${site.areasServed.join(", ")}), plus Kanchipuram, Chengalpattu and Tiruvallur districts for larger projects.`);
+  lines.push(`- Location and service area: Chennai city and suburbs (${site.areasServed.join(", ")}).`);
   lines.push(`- Hours: ${site.hours} IST.`);
   lines.push("- Process: call or form, then a chargeable walk-through of the space, then a written proposal, then installation and weekly service.");
   lines.push("- Guarantees: any rented plant that declines is replaced free for the life of the plan. Plants installed outside a rental plan are covered for 30 days; irrigation and hardscape carry a 1-year workmanship warranty.");

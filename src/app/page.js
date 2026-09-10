@@ -88,7 +88,7 @@ export default function HomePage() {
                     data-speed="auto"
                   />
                 </div>
-                <p className="hero__caption">Founded in Chennai, 2025. Plants installed, maintained weekly and replaced free</p>
+                <p className="hero__caption">Founded in Chennai, 2024. Plants installed, maintained weekly and replaced free</p>
               </div>
             </div>
           </HeroIntro>
@@ -107,7 +107,7 @@ export default function HomePage() {
             lead="Owning office plants means capital, upkeep and the cost of replacing whatever dies. Renting moves all three onto us."
             row
             action={
-              <Link href="/services/plant-rental" className="btn btn--ghost">
+              <Link href="/services/plant-rental" className="btn btn--ghost btn--desktop-only">
                 How rental works
               </Link>
             }
