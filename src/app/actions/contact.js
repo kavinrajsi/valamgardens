@@ -217,7 +217,7 @@ ${metaRows.map(([k, v]) => `<tr><td style="color:#888">${k}</td><td>${escapeHtml
         cc: cc.length ? cc : undefined,
         bcc: bcc.length ? bcc : undefined,
         reply_to: [data.email, ...extraReplyTo].filter(Boolean),
-        subject: `Enquiry: ${data.service || "General"} from ${data.name}`,
+        subject: `[${site.domain}] Enquiry: ${data.service || "General"} from ${data.name}`,
         text,
         html,
       }),
